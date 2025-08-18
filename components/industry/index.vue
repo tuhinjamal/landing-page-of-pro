@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="industry">
     <div
       class="bg-[#ffffff] mx-[20px] md:mx-[32px] lg:mx-[120px] 2xl:mx-[240px]"
     >

@@ -67,9 +67,9 @@
         <li>
           <a
             href="#"
-            @click.prevent="scrollTo('featureOne')"
+            @click.prevent="scrollTo('features')"
             :class="{
-              'text-[#F47920] ': activeSection === 'featureOne',
+              'text-[#F47920] ': activeSection === 'features',
             }"
             class="transition-colors hover:text-[#F47920]"
             >Features</a
@@ -78,9 +78,9 @@
         <li>
           <a
             href="#"
-            @click.prevent="scrollTo('benifits')"
+            @click.prevent="scrollTo('industry')"
             :class="{
-              'text-[#F47920] ': activeSection === 'benifits',
+              'text-[#F47920] ': activeSection === 'industry',
             }"
             class="transition-colors hover:text-[#F47920]"
             >Industry we Serve</a
@@ -89,9 +89,9 @@
         <li>
           <a
             href="#"
-            @click.prevent="scrollTo('benifits')"
+            @click.prevent="scrollTo('options')"
             :class="{
-              'text-[#F47920] ': activeSection === 'benifits',
+              'text-[#F47920] ': activeSection === 'options',
             }"
             class="transition-colors hover:text-[#F47920]"
             >Why Choose ProHR </a
@@ -100,9 +100,9 @@
         <li>
           <a
             href="#"
-            @click.prevent="scrollTo('comparison')"
+            @click.prevent="scrollTo('testimonials')"
             :class="{
-              'text-[#F47920] ': activeSection === 'comparison',
+              'text-[#F47920] ': activeSection === 'testimonials',
             }"
             class="transition-colors hover:text-[#F47920]"
             >About</a
@@ -140,9 +140,9 @@
         <li>
           <a
             href="#"
-            @click.prevent="scrollTo('featureOne')"
+            @click.prevent="scrollTo('features')"
             :class="{
-              'text-[#F47920] ': activeSection === 'featureOne',
+              'text-[#F47920] ': activeSection === 'features',
             }"
             >Features</a
           >
@@ -150,9 +150,9 @@
         <li>
           <a
             href="#"
-            @click.prevent="scrollTo('benifits')"
+            @click.prevent="scrollTo('industry')"
             :class="{
-              'text-[#F47920] ': activeSection === 'benifits',
+              'text-[#F47920] ': activeSection === 'industry',
             }"
             >Products & Services</a
           >
@@ -160,9 +160,9 @@
         <li>
           <a
             href="#"
-            @click.prevent="scrollTo('comparison')"
+            @click.prevent="scrollTo('options')"
             :class="{
-              'text-[#F47920] ': activeSection === 'comparison',
+              'text-[#F47920] ': activeSection === 'options',
             }"
             >About us</a
           >
@@ -175,7 +175,7 @@
             Get a free demo
           </button> -->
           <button
-            class="px-[30px] py-[10px] font-campton bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-4 justify-center items-center"
+            class="px-[30px] py-[10px] font-campton bg-[#F47920] text-[16px] font-[500] rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-4 justify-center items-center"
           >
             <p>Get a free demo</p>
             <img src="../../assets/images/arrow-45-deg.png" alt="" />
@@ -202,7 +202,7 @@ function scrollTo(id) {
 }
 
 function handleScroll() {
-  const sections = ["featureOne", "benifits", "comparison"];
+  const sections = ["features", "industry", "options", "testimonials"];
   let found = false;
   for (const id of sections) {
     const el = document.getElementById(id);
