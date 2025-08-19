@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative bg-[#FFFFFF] border border-[#F6F1F0] rounded-2xl shadow-sm w-[400px] lg:h-[334px]"
+    class="relative bg-[#FFFFFF] rounded-2xl shadow-sm w-[400px] lg:h-[334px]"
   >
     <div
       class="mt-[32px] ml-[31px] bg-white h-[56px] w-[56px] rounded-full flex justify-center items-center text-center"

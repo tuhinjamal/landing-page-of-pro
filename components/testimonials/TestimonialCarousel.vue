@@ -29,10 +29,15 @@
 
     <!-- Controls -->
     <div
-      class="grid grid-cols-2 md:grid-cols-3 items-center gap-4 px-[20px] xl:px-[120px] 2xl:px-[240px]"
+      class="hidden md:grid grid-cols-2 md:grid-cols-3 items-center gap-4 px-[20px] xl:px-[120px] 2xl:px-[240px]"
     >
       <div class="text-[24px] text-gray-500 italic">
-        <span class="text-black font-bold">{{ displayIndex + 1 }}</span> /
+        <span class="text-black font-bold"
+          >{{
+            displayIndex + 1 < 10 ? `0${displayIndex + 1}` : displayIndex + 1
+          }}
+        </span>
+        /
         <span>{{ originalCount }}</span>
       </div>
 
@@ -103,56 +108,78 @@
       </div>
     </div>
 
+    <div class="text-center md:hidden">
+      <div class="flex justify-center items-center gap-2">
+        <span
+          v-for="i in originalCount"
+          :key="i"
+          :class="[
+            'h-2',
+            displayIndex === i - 1
+              ? 'bg-black w-6 rounded-sm'
+              : 'bg-gray-300 w-2 rounded-full',
+          ]"
+        />
+      </div>
+    </div>
     <!-- Mobile Buttons -->
-    <div class="flex md:hidden items-center justify-center gap-2 pt-[32px]">
-      <!-- Prev -->
+    <div
+      class="flex md:hidden justify-between items-center px-4 gap-2 pt-[32px]"
+    >
+      <div class="text-[24px] text-gray-500 italic">
+        <span class="text-black font-bold">{{
+          displayIndex + 1 < 10 ? `0${displayIndex + 1}` : displayIndex + 1
+        }}</span>
+        /
+        <span>{{ originalCount }}</span>
+      </div>
+      <div class="flex justify-between items-center gap-4">
+        <button
+          @click="scrollPrev"
+          :class="[
+            'w-[40px] h-[40px] rounded-full flex items-center justify-center group transition-colors duration-300',
+            lastDirection === 'prev'
+              ? 'bg-black text-white'
+              : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
+          ]"
+        >
+          <img
+            v-if="lastDirection !== 'prev'"
+            src="./arrow_black.svg"
+            alt="arrow"
+            class="rotate-180 w-[12px] h-[12px]"
+          />
+          <img
+            v-if="lastDirection === 'prev'"
+            src="./arrow_white.svg"
+            alt="arrow"
+            class="w-[12px] h-[12px]"
+          />
+        </button>
 
-      <button
-        @click="scrollPrev"
-        :class="[
-          'w-[40px] h-[40px] rounded-full flex items-center justify-center group transition-colors duration-300',
-          lastDirection === 'prev'
-            ? 'bg-black text-white'
-            : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
-        ]"
-      >
-        <img
-          v-if="lastDirection !== 'prev'"
-          src="./arrow_black.svg"
-          alt="arrow"
-          class="rotate-180 w-[12px] h-[12px]"
-        />
-        <img
-          v-if="lastDirection === 'prev'"
-          src="./arrow_white.svg"
-          alt="arrow"
-          class="w-[12px] h-[12px]"
-        />
-      </button>
-
-      <!-- Next -->
-      <button
-        @click="scrollNext"
-        :class="[
-          'w-[40px] h-[40px] rounded-full flex items-center justify-center group transition-colors duration-300',
-          lastDirection === 'next'
-            ? 'bg-black text-white'
-            : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
-        ]"
-      >
-        <img
-          v-if="lastDirection !== 'next'"
-          src="./arrow_black.svg"
-          alt="arrow"
-          class="w-[12px] h-[12px]"
-        />
-        <img
-          v-if="lastDirection === 'next'"
-          src="./arrow_white.svg"
-          alt="arrow"
-          class="rotate-180 w-[12px] h-[12px]"
-        />
-      </button>
+        <button
+          @click="scrollNext"
+          :class="[
+            'w-[40px] h-[40px] rounded-full flex items-center justify-center group transition-colors duration-300',
+            lastDirection === 'next'
+              ? 'bg-black text-white'
+              : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
+          ]"
+        >
+          <img
+            v-if="lastDirection !== 'next'"
+            src="./arrow_black.svg"
+            alt="arrow"
+            class="w-[12px] h-[12px]"
+          />
+          <img
+            v-if="lastDirection === 'next'"
+            src="./arrow_white.svg"
+            alt="arrow"
+            class="rotate-180 w-[12px] h-[12px]"
+          />
+        </button>
+      </div>
     </div>
   </section>
 </template>
@@ -162,6 +189,78 @@ import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import TestimonialCard from "./TestimonialCard.vue";
 
 const testimonials = [
+  {
+    quote:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    title: "I found very efficient!",
+    name: "David William",
+    avatar: "https://i.pravatar.cc/100?img=1",
+    role: "CEO, Google",
+    rating: 4.5,
+  },
+  {
+    quote:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    title: "I found very efficient!",
+    name: "David William",
+    avatar: "https://i.pravatar.cc/100?img=2",
+    role: "CEO, Google",
+    rating: 5,
+  },
+  {
+    quote:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    title: "I found very efficient!",
+    name: "David William",
+    avatar: "https://i.pravatar.cc/100?img=3",
+    role: "CEO, Google",
+    rating: 4,
+  },
+  {
+    quote:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    title: "I found very efficient!",
+    name: "David William",
+    avatar: "https://i.pravatar.cc/100?img=4",
+    role: "CEO, Google",
+    rating: 4.8,
+  },
+  {
+    quote:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    title: "I found very efficient!",
+    name: "David William",
+    avatar: "https://i.pravatar.cc/100?img=1",
+    role: "CEO, Google",
+    rating: 4.5,
+  },
+  {
+    quote:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    title: "I found very efficient!",
+    name: "David William",
+    avatar: "https://i.pravatar.cc/100?img=2",
+    role: "CEO, Google",
+    rating: 5,
+  },
+  {
+    quote:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    title: "I found very efficient!",
+    name: "David William",
+    avatar: "https://i.pravatar.cc/100?img=3",
+    role: "CEO, Google",
+    rating: 4,
+  },
+  {
+    quote:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    title: "I found very efficient!",
+    name: "David William",
+    avatar: "https://i.pravatar.cc/100?img=4",
+    role: "CEO, Google",
+    rating: 4.8,
+  },
   {
     quote:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",

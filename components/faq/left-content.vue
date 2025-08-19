@@ -14,8 +14,8 @@
         <span
           :class="
             activeIndex === index
-              ? 'text-[#F6917E] transition-colors duration-300 ease-in-out h-[12px] w-[12px] md:h-[24px] md:w-[24px] border border-[#F6917E] rounded-full flex items-center justify-center'
-              : 'text-[#F6917E] h-[12px] w-[12px] md:h-[24px] md:w-[24px]'
+              ? 'text-[#F6917E] bg-[#F6917E]/30 backdrop-blur-md transition-colors duration-300 ease-in-out h-[12px] w-[12px] md:h-[24px] md:w-[24px] rounded-full flex items-center justify-center'
+              : 'text-black h-[12px] w-[12px] md:h-[24px] md:w-[24px]'
           "
           class="text-xl font-bold cursor-pointer"
         >

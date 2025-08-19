@@ -53,37 +53,37 @@ const images = import.meta.glob("./*.png", {
 const features = [
   {
     title: "Retail Chains & Super Market",
-    icon: images["./tick-badge-black.png"],
+    icon: images["./tick-badge.png"],
     description:
       "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
   },
   {
     title: "Logistic & Courier Service",
-    icon: images["./tick-badge-black.png"],
+    icon: images["./tick-badge.png"],
     description:
       "Monitor field staff check-ins, delivery schedules, and working hours with GPS-enabled attendance. Improve accountability and optimize logistics workforce management. ",
   },
   {
     title: "Construction & Realestate",
-    icon: images["./tick-badge-black.png"],
+    icon: images["./tick-badge.png"],
     description:
       "Handle multi-site attendance, project-based shifts, and contractor workforce with ease. Get real-time updates from on-site teams with mobile-based tracking.",
   },
   {
     title: "Corporate & Tech Companies",
-    icon: images["./tick-badge-black.png"],
+    icon: images["./tick-badge.png"],
     description:
       "Automate HR processes, manage hybrid teams, and simplify payroll with full transparency. Built for fast-paced companies that value efficiency and security. ",
   },
   {
     title: "Garments & Healthcare",
-    icon: images["./tick-badge-black.png"],
+    icon: images["./tick-badge.png"],
     description:
       "Simplify shift rotations, overtime handling, and mass employee attendance tracking. Designed for industries with large scale and dynamic workforces that impact. ",
   },
   {
     title: "Educational Institute",
-    icon: images["./tick-badge-black.png"],
+    icon: images["./tick-badge.png"],
     description:
       "Manage teacher and staff attendance, leave, payroll, and academic calendars. Bring automation and order to everyday HR tasks in schools and colleges for admission and every documentation",
   },

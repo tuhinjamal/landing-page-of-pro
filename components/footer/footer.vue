@@ -7,7 +7,7 @@
         </p>
 
         <button
-          class="px-[24px] py-[12px] bg-white text-[16px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center w-full md:w-auto leading-[160%]"
+          class="px-[24px] py-[12px] bg-white text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center w-full md:w-auto leading-[160%]"
         >
           <p>Get a free demo</p>
           <img src="../../assets/images/arrow-45-deg.png" alt="" />
@@ -30,7 +30,9 @@
               class="w-[150px] h-[50px]"
             />
           </div>
-          <p class="text-[12px] font-[400] leading-[180%]">
+          <p
+            class="text-[12px] font-[400] leading-[180%] lg:pr-[150px] 2xl:pr-[300px]"
+          >
             This HR and Attendance Management System is developed by Inflack to
             simplify and streamline complex HR operations for modern businesses.
             With features like cloud-based attendance, automated payroll, shift

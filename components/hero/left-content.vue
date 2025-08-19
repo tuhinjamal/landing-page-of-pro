@@ -3,7 +3,7 @@
     <!-- heading -->
     <p
       :class="[
-        'text-[28px] leading-[120%] md:text-[40px] lg:text-[40px] font-[700] text-center md:text-start transition-all duration-500 ease-out',
+        'font-work text-[28px] leading-[120%] md:text-[40px] lg:text-[43.5px] font-extrabold text-center md:text-start transition-all duration-500 ease-out ',
         show.heading
           ? 'opacity-100 translate-y-0 blur-0'
           : 'opacity-0 translate-y-10 blur-sm',
@@ -34,7 +34,7 @@
       <!-- paragraph -->
       <p
         :class="[
-          'text-[#0D121D] text-[14px] font-[400] mt-[16px] leading-[160%] transition-all duration-500 ease-out',
+          'text-[#0D121D] text-[14px] font-[400] mt-[16px] leading-[160%] transition-all duration-500 ease-out text-center md:text-start',
           show.paragraph
             ? 'opacity-100 translate-y-0 blur-0'
             : 'opacity-0 translate-y-10 blur-sm',
@@ -49,7 +49,7 @@
       <!-- button -->
       <button
         :class="[
-          'px-[24px] py-[12px] bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#ff9778] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%] transition-all duration-500 ease-out',
+          'px-[24px] py-[12px] bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%] transition-all duration-500 ease-out w-full md:w-auto',
           show.button
             ? 'opacity-100 translate-y-0 blur-0'
             : 'opacity-0 translate-y-10 blur-sm',
@@ -169,7 +169,7 @@
 
           <button
             type="submit"
-            class="bg-[#F47920] text-black px-6 py-2 rounded-md hover:bg-[#ff9778] transition"
+            class="bg-[#F47920] text-black px-6 py-2 rounded-md hover:bg-[#DE6E1D] transition"
           >
             Submit →
           </button>

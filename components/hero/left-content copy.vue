@@ -25,7 +25,7 @@
         programs designed to foster professional growth and development. 
       </p>
       <button
-        class="px-[24px] py-[12px] bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%]"
+        class="px-[24px] py-[12px] bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%]"
         @click="isOpen = true"
       >
         <p>Get a free demo</p>
@@ -151,7 +151,7 @@
 
           <button
             type="submit"
-            class="bg-[#F47920] text-black px-6 py-2 rounded-md hover:bg-[#ff9778] transition"
+            class="bg-[#F47920] text-black px-6 py-2 rounded-md hover:bg-[#DE6E1D] transition"
           >
             Submit →
           </button>

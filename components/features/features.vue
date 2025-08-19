@@ -16,7 +16,7 @@
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="bg-gray-50 border border-gray-100 px-[23px] py-[47px] rounded-3xl hover:shadow-md hover:border-[#F47920] transition cursor-pointer"
+          class="bg-white border border-[#E9EAEC] px-[23px] py-[47px] rounded-3xl hover:shadow-md hover:border-[#F47920] transition cursor-pointer"
         >
           <img
             :src="feature.icon"

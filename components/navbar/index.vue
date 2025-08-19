@@ -113,7 +113,7 @@
       <!-- CTA Buttons -->
       <div class="hidden lg:flex">
         <button
-          class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
+          class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
         >
           <p>Get a free demo</p>
           <img src="../../assets/images/arrow-45-deg.png" alt="" />
@@ -170,12 +170,12 @@
 
         <li>
           <!-- <button
-            class=" text-[16px] font-[500] w-full text-left bg-[#F47920] px-[30px] py-[10px] rounded hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white"
+            class=" text-[16px] font-[500] w-full text-left bg-[#F47920] px-[30px] py-[10px] rounded hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white"
           >
             Get a free demo
           </button> -->
           <button
-            class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
+            class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
           >
             <p>Get a free demo</p>
             <img src="../../assets/images/arrow-45-deg.png" alt="" />
