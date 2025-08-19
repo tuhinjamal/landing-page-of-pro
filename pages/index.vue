@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Navbar class="sticky top-0" />
-    <div class="bg-[#FEF2E9]">
+    <Navbar class="sticky top-0 z-50" />
+    <div class="bg-[#FEF2E9] z-10">
       <Hero />
     </div>
     <Features />
@@ -12,7 +12,9 @@
     <Industry />
 
     <Faq />
-    <Testimonials />
+    <div class="mx-0 my-0 px-0 py-0 z-10">
+      <Testimonials />
+    </div>
     <div class="bg-[#022235]">
       <Footer />
       <div
