@@ -1,9 +1,9 @@
 <template>
   <div
-    class="relative bg-[#F6F1F0] border border-[#F6F1F0] rounded-2xl shadow-sm w-[400px] p-[31px] lg:h-[334px]"
+    class="relative bg-[#FFFFFF] border border-[#F6F1F0] rounded-2xl shadow-sm w-[400px] lg:h-[334px]"
   >
     <div
-      class="bg-white h-[56px] w-[56px] rounded-full flex justify-center items-center text-center"
+      class="mt-[32px] ml-[31px] bg-white h-[56px] w-[56px] rounded-full flex justify-center items-center text-center"
     >
       <img
         src="../../assets/images/double-quote.png"
@@ -14,13 +14,15 @@
 
     <!-- Quote Text -->
     <p
-      class="text-[12px] lg:text-[16px] font-[400] md:text-base text-[#202A44] font-campton my-[32px] leading-[160%]"
+      class="text-[12px] lg:text-[16px] font-[400] md:text-base text-[#202A44] leading-[160%] mx-[31px] my-[32px]"
     >
       {{ testimonial.quote }}
     </p>
 
     <!-- Footer -->
-    <div class="flex items-center gap-4 leading-[160%]">
+    <div
+      class="flex items-center gap-[24px] leading-[160%] mx-[31px] my-[32px]"
+    >
       <img
         :src="testimonial.avatar"
         :alt="testimonial.name"
@@ -28,7 +30,7 @@
       />
       <div>
         <!-- Star Rating -->
-        <div class="flex items-center text-[#F4765E] pb-1">
+        <div class="flex gap-[4px] items-center text-[#F47920] pb-[8px]">
           <template v-for="i in 5" :key="i">
             <!-- full star -->
             <svg
@@ -73,7 +75,7 @@
             <svg
               v-else
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+              fill="white"
               stroke="currentColor"
               stroke-width="1.5"
               viewBox="0 0 24 24"
@@ -87,10 +89,12 @@
         </div>
 
         <!-- Name + Role -->
-        <p class="text-[16px] md:text-base font-campton font-[400]">
+        <p
+          class="text-[16px] md:text-base font-[400] text-[#0D121D] leading-[160%]"
+        >
           {{ testimonial.name }},
         </p>
-        <p class="text-[12px] font-[500] md:text-sm text-gray-600 font-campton">
+        <p class="text-[12px] font-[500] text-[#0D121D] leading-[160%]">
           {{ testimonial.role }}
         </p>
       </div>

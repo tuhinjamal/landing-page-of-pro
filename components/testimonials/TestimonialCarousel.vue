@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonials" class="py-[60px] lg:py-[120px] bg-[#FAFAFA]">
+  <section id="testimonials" class="py-[60px] lg:py-[120px] bg-[#FEF2E9]">
     <div class="text-center pb-[40px] md:pb-[48px]">
       <p class="text-[25px] md:text-[40px] font-[700] text-[#000000] font-vina">
         <span class="text-[#F47920]">Testimonial </span> from clients
@@ -26,11 +26,12 @@
         </div>
       </div>
     </div>
+
     <!-- Controls -->
     <div
       class="grid grid-cols-2 md:grid-cols-3 items-center gap-4 px-[20px] xl:px-[120px] 2xl:px-[240px]"
     >
-      <div class="text-[24px] text-gray-500 font-campton italic">
+      <div class="text-[24px] text-gray-500 italic">
         <span class="text-black font-bold">{{ displayIndex + 1 }}</span> /
         <span>{{ originalCount }}</span>
       </div>
@@ -48,72 +49,108 @@
         />
       </div>
 
+      <!-- Desktop Buttons -->
       <div
         class="hidden md:flex items-center justify-end gap-2 pr-0 2xl:pr-[32px]"
       >
+        <!-- Prev -->
+
         <button
           @click="scrollPrev"
-          class="w-[62px] h-[62px] text-[24px] rounded-full cursor-pointer bg-[#E9EAEC] hover:bg-black hover:text-white transition-colors duration-300 flex items-center justify-center group"
+          :class="[
+            'w-[62px] h-[62px] rounded-full flex items-center justify-center group transition-colors duration-300',
+            lastDirection === 'prev'
+              ? 'bg-black text-white'
+              : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
+          ]"
         >
           <img
+            v-if="lastDirection !== 'prev'"
             src="./arrow_black.svg"
             alt="arrow"
-            class="rotate-180 block group-hover:hidden"
+            class="rotate-180"
           />
           <img
+            v-if="lastDirection === 'prev'"
             src="./arrow_white.svg"
             alt="arrow"
-            class="hidden group-hover:block"
           />
         </button>
 
+        <!-- Next -->
         <button
           @click="scrollNext"
-          class="w-[62px] h-[62px] text-[24px] rounded-full cursor-pointer bg-[#E9EAEC] hover:bg-black hover:text-white transition-colors duration-300 flex items-center justify-center group"
+          :class="[
+            'w-[62px] h-[62px] rounded-full flex items-center justify-center group transition-colors duration-300',
+            lastDirection === 'next'
+              ? 'bg-black text-white'
+              : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
+          ]"
         >
           <img
+            v-if="lastDirection !== 'next'"
             src="./arrow_black.svg"
             alt="arrow"
-            class="block group-hover:hidden"
+            class=""
           />
           <img
+            v-if="lastDirection === 'next'"
             src="./arrow_white.svg"
             alt="arrow"
-            class="hidden group-hover:block rotate-180"
+            class="rotate-180"
           />
         </button>
       </div>
     </div>
+
+    <!-- Mobile Buttons -->
     <div class="flex md:hidden items-center justify-center gap-2 pt-[32px]">
+      <!-- Prev -->
+
       <button
         @click="scrollPrev"
-        class="w-[40px] h-[40px] text-[24px] rounded-full cursor-pointer bg-[#E9EAEC] hover:bg-black hover:text-white transition-colors duration-300 flex items-center justify-center group"
+        :class="[
+          'w-[40px] h-[40px] rounded-full flex items-center justify-center group transition-colors duration-300',
+          lastDirection === 'prev'
+            ? 'bg-black text-white'
+            : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
+        ]"
       >
         <img
+          v-if="lastDirection !== 'prev'"
           src="./arrow_black.svg"
           alt="arrow"
-          class="rotate-180 block group-hover:hidden w-[12px] h-[12px]"
+          class="rotate-180 w-[12px] h-[12px]"
         />
         <img
+          v-if="lastDirection === 'prev'"
           src="./arrow_white.svg"
           alt="arrow"
-          class="hidden group-hover:block w-[12px] h-[12px]"
+          class="w-[12px] h-[12px]"
         />
       </button>
 
+      <!-- Next -->
       <button
         @click="scrollNext"
-        class="w-[40px] h-[40px] text-[24px] rounded-full cursor-pointer bg-[#E9EAEC] hover:bg-black hover:text-white transition-colors duration-300 flex items-center justify-center group"
+        :class="[
+          'w-[40px] h-[40px] rounded-full flex items-center justify-center group transition-colors duration-300',
+          lastDirection === 'next'
+            ? 'bg-black text-white'
+            : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
+        ]"
       >
         <img
+          v-if="lastDirection !== 'next'"
           src="./arrow_black.svg"
           alt="arrow"
-          class="block group-hover:hidden w-[12px] h-[12px]"
+          class="w-[12px] h-[12px]"
         />
         <img
+          v-if="lastDirection === 'next'"
           src="./arrow_white.svg"
           alt="arrow"
-          class="hidden group-hover:block rotate-180 w-[12px] h-[12px]"
+          class="rotate-180 w-[12px] h-[12px]"
         />
       </button>
     </div>
@@ -169,6 +206,7 @@ const carouselWrapper = ref(null);
 const cardGap = 24;
 const currentIndex = ref(originalCount); // Start from first original (after clones)
 const interval = ref(null);
+const lastDirection = ref("next"); // ✅ track active button
 const windowWidth = ref(
   typeof window !== "undefined" ? window.innerWidth : 1024
 );
@@ -179,9 +217,8 @@ const updateWindowWidth = () => {
   }
 };
 
-// ✅ Updated breakpoint logic
 const cardsPerView = computed(() => {
-  if (windowWidth.value >= 1440) return 3.25; // special case for >=1440px
+  if (windowWidth.value >= 1440) return 3.25;
   if (windowWidth.value < 640) return 1;
   if (windowWidth.value < 1024) return 2;
   return 2.5;
@@ -211,19 +248,21 @@ const offset = computed(() => {
 });
 
 const scrollNext = () => {
+  lastDirection.value = "next"; // ✅
   currentIndex.value++;
   if (currentIndex.value >= originalCount + visibleCount.value) {
     setTimeout(() => {
       currentIndex.value = visibleCount.value;
       track.value.style.transition = "none";
       track.value.style.transform = `translateX(-${offset.value}px)`;
-      void track.value.offsetWidth; // force reflow
+      void track.value.offsetWidth;
       track.value.style.transition = "";
     }, 700);
   }
 };
 
 const scrollPrev = () => {
+  lastDirection.value = "prev"; // ✅
   currentIndex.value--;
   if (currentIndex.value < visibleCount.value) {
     setTimeout(() => {

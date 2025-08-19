@@ -52,13 +52,13 @@
       </button>
 
       <!-- Desktop Menu -->
-      <ul class="hidden lg:flex space-x-[32px] text-[16px] font-[600]">
+      <ul class="hidden lg:flex space-x-[32px] text-[16px] font-[500]">
         <li>
           <a
             href="#"
             @click.prevent="scrollTo('home')"
             :class="{
-              'text-[#F47920] ': activeSection === 'home',
+              'text-[#F47920] font-[600]': activeSection === 'home',
             }"
             class="transition-colors hover:text-[#F47920]"
             >Overview</a
@@ -69,7 +69,7 @@
             href="#"
             @click.prevent="scrollTo('features')"
             :class="{
-              'text-[#F47920] ': activeSection === 'features',
+              'text-[#F47920] font-[600]': activeSection === 'features',
             }"
             class="transition-colors hover:text-[#F47920]"
             >Features</a
@@ -80,7 +80,7 @@
             href="#"
             @click.prevent="scrollTo('industry')"
             :class="{
-              'text-[#F47920] ': activeSection === 'industry',
+              'text-[#F47920] font-[600]': activeSection === 'industry',
             }"
             class="transition-colors hover:text-[#F47920]"
             >Industry we Serve</a
@@ -91,7 +91,7 @@
             href="#"
             @click.prevent="scrollTo('options')"
             :class="{
-              'text-[#F47920] ': activeSection === 'options',
+              'text-[#F47920] font-[600]': activeSection === 'options',
             }"
             class="transition-colors hover:text-[#F47920]"
             >Why Choose ProHR </a
@@ -102,7 +102,7 @@
             href="#"
             @click.prevent="scrollTo('testimonials')"
             :class="{
-              'text-[#F47920] ': activeSection === 'testimonials',
+              'text-[#F47920] font-[600]': activeSection === 'testimonials',
             }"
             class="transition-colors hover:text-[#F47920]"
             >About</a
@@ -113,7 +113,7 @@
       <!-- CTA Buttons -->
       <div class="hidden lg:flex">
         <button
-          class="px-[30px] py-[10px] font-campton bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-4 justify-center items-center"
+          class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
         >
           <p>Get a free demo</p>
           <img src="../../assets/images/arrow-45-deg.png" alt="" />
@@ -125,14 +125,14 @@
     <transition name="fade">
       <ul
         v-if="isOpen"
-        class="lg:hidden px-4 pb-4 space-y-3 text-[16px] font-[500] font-campton bg-[#F6F1F0]"
+        class="lg:hidden px-4 pb-4 space-y-3 text-[16px] font-[500] bg-[#F6F1F0]"
       >
         <li>
           <a
             href="#"
             @click.prevent="scrollTo('home')"
             :class="{
-              'text-[#F47920] ': activeSection === 'home',
+              'text-[#F47920] font-[600]': activeSection === 'home',
             }"
             >Home</a
           >
@@ -142,7 +142,7 @@
             href="#"
             @click.prevent="scrollTo('features')"
             :class="{
-              'text-[#F47920] ': activeSection === 'features',
+              'text-[#F47920] font-[600]': activeSection === 'features',
             }"
             >Features</a
           >
@@ -152,7 +152,7 @@
             href="#"
             @click.prevent="scrollTo('industry')"
             :class="{
-              'text-[#F47920] ': activeSection === 'industry',
+              'text-[#F47920] font-[600]': activeSection === 'industry',
             }"
             >Products & Services</a
           >
@@ -162,7 +162,7 @@
             href="#"
             @click.prevent="scrollTo('options')"
             :class="{
-              'text-[#F47920] ': activeSection === 'options',
+              'text-[#F47920] font-[600]': activeSection === 'options',
             }"
             >About us</a
           >
@@ -170,12 +170,12 @@
 
         <li>
           <!-- <button
-            class="font-campton text-[16px] font-[500] w-full text-left bg-[#F47920] px-[30px] py-[10px] rounded hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white"
+            class=" text-[16px] font-[500] w-full text-left bg-[#F47920] px-[30px] py-[10px] rounded hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white"
           >
             Get a free demo
           </button> -->
           <button
-            class="px-[30px] py-[10px] font-campton bg-[#F47920] text-[16px] font-[500] rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-4 justify-center items-center"
+            class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
           >
             <p>Get a free demo</p>
             <img src="../../assets/images/arrow-45-deg.png" alt="" />

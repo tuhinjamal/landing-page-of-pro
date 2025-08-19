@@ -16,7 +16,7 @@
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="bg-gray-50 border border-gray-100 px-[23px] py-[47px] rounded-3xl hover:shadow-md transition font-campton cursor-pointer"
+          class="bg-gray-50 border border-gray-100 px-[23px] py-[47px] rounded-3xl hover:shadow-md hover:border-[#F47920] transition cursor-pointer"
         >
           <img
             :src="feature.icon"
@@ -30,7 +30,7 @@
             {{ feature.title }}
           </h3>
           <p
-            class="text-[12px] 2xl:text-[16px] font-[400] text-[#202A44] leading-snug mx-auto md:mx-0 text-center md:text-left leading-[160%]"
+            class="text-[14px] font-[400] text-[#202A44] mx-auto md:mx-0 text-center md:text-left leading-[160%] mt-[16px]"
           >
             {{ feature.description }}
           </p>

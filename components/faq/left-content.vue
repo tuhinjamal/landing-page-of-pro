@@ -1,14 +1,14 @@
 <template>
-  <section class="bg-white">
+  <section class="bg-white mx-0 my-0 px-0 py-0">
     <div
       v-for="(item, index) in faqs"
       :key="index"
-      class="border-t border-b border-gray-200 overflow-hidden"
+      class="border-t border-b border-gray-200 overflow-hidden mx-0 my-0 px-0 py-0"
     >
       <!-- Question -->
       <button
         @click="toggle(index)"
-        class="w-full flex justify-between items-start md:items-center text-left px-4 py-4 font-[600] text-[12px] md:text-[16px] font-campton hover:bg-gray-50 not-italic gap-4"
+        class="w-full flex justify-between items-start md:items-center text-left px-4 py-4 font-[600] text-[12px] md:text-[16px] hover:bg-gray-50 not-italic gap-4"
       >
         <span class="cursor-pointer leading-[160%]">{{ item.question }}</span>
         <span
@@ -27,7 +27,7 @@
       <transition name="accordion">
         <div
           v-if="activeIndex === index"
-          class="leading-[120%] px-4 pb-4 text-[14px] font-[400] text-[#4D5569] leading-relaxed font-campton"
+          class="leading-[120%] px-4 pb-4 text-[14px] font-[400] text-[#4D5569] leading-relaxed"
         >
           {{ item.answer }}
         </div>
@@ -47,30 +47,28 @@ const toggle = (index) => {
 
 const faqs = [
   {
-    question:
-      "Does PROHR integrate with my existing payroll and accounting systems",
+    question: "Is ProHR suitable for small businesses? ",
     answer:
-      "PROHR is an all-in-one, cloud-based Human Resource Management (HRM) solution. It's designed for small, medium, and large organisations looking to simplify HR tasks like employee data management, leave requests, payroll integration, performance tracking, and reporting. Whether you're a growing startup or an established company, PROHR helps automate HR processes and improve employee experience.",
+      "Yes, ProHR is built to support businesses of all sizes — from small teams to large companies with multiple locations.",
   },
   {
-    question: "Is my employees' data secure with PROHR?",
-    answer:
-      "Yes. PROHR uses enterprise-grade security standards, encryption, and secure cloud infrastructure.",
+    question: "Can I integrate this sytem with attendance hardware? ",
+    answer: "Yes, this system is ready to integrate any Attendance hardwre.",
   },
   {
-    question: "Can PROHR handle remote teams and multiple office locations?",
+    question: "How long does it take to set up ProHR for my company? ",
     answer:
-      "Absolutely. PROHR is accessible from anywhere and supports multiple branches and remote users.",
+      "Setup is quick! Depending on your team size, it usually takes 2–5 working days for complete onboarding and training.",
   },
   {
-    question: "How long does it take to get started with PROHR?",
+    question: "Can I customize features based on my company needs? ",
     answer:
-      "Typically within a few days depending on the size and complexity of your team’s data.",
+      "Yes, ProHR is flexible. We can tailor modules like shifts, timesheets, and payroll according to your company policies",
   },
   {
-    question: "Do I need technical skills to set up and use PROHR?",
+    question: "Does PROHR offer customisable reports and dashboards?",
     answer:
-      "No, PROHR is built to be user-friendly and does not require technical expertise to operate.",
+      "Yes, PROHR provides a range of customizable reports and dashboards to help you gain insights from your HR data.",
   },
   {
     question: "Is there a mobile app for employees and managers?",

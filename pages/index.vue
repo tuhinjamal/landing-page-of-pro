@@ -10,6 +10,7 @@
       <Options />
     </div>
     <Industry />
+
     <Faq />
     <Testimonials />
     <div class="bg-[#022235]">

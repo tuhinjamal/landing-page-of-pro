@@ -1,33 +1,33 @@
 <template>
   <section>
-    <div class="grid grid-cols-1">
-      <div
-        v-for="(feature, index) in features"
-        :key="index"
-        class="bg-[#FEF2E9] border border-gray-100 px-[23px] pt-[22px] transition font-campton cursor-pointer"
-      >
-        <div class="grid grid-cols-[auto_1fr] gap-4 items-start">
-          <img
-            :src="feature.icon"
-            alt="icon"
-            class="w-[24px] h-[24px] mb-[10px] mx-auto md:mx-0"
-          />
-          <div>
-            <!-- </div> -->
-            <h3
-              class="text-[16px] font-[600] mb-[12px] mx-auto md:mx-0 text-left leading-[160%]"
-            >
-              {{ feature.title }}
-            </h3>
-            <p
-              class="text-[13px] md:text-[14px] font-[400] text-[#202A44] mx-auto md:mx-0 text-left leading-[160%]"
-            >
-              {{ feature.description }}
-            </p>
-          </div>
+    <!-- <div class="grid grid-cols-1"> -->
+    <div
+      v-for="(feature, index) in features"
+      :key="index"
+      class="bg-[#FEF2E9] border border-gray-100 px-[23px] pt-[22px] transition cursor-pointer"
+    >
+      <div class="flex justify-start gap-[24px] items-center">
+        <img
+          :src="feature.icon"
+          alt="icon"
+          class="w-[24px] h-[24px] mb-[10px] mx-auto md:mx-0"
+        />
+        <div>
+          <!-- </div> -->
+          <h3
+            class="text-[16px] font-[600] mb-[1.6px] mx-auto md:mx-0 text-left leading-[160%]"
+          >
+            {{ feature.title }}
+          </h3>
+          <p
+            class="text-[13px] md:text-[14px] font-[400] text-[#202A44] mx-auto md:mx-0 text-left leading-[100%]"
+          >
+            {{ feature.description }}
+          </p>
         </div>
       </div>
     </div>
+    <!-- </div> -->
   </section>
 </template>
 
@@ -38,40 +38,64 @@ const images = import.meta.glob("./*.png", {
 });
 const features = [
   {
-    title: "Employee Management:",
+    title: "CoreHR",
     icon: images["./tick-badge.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Manage employee records, departments, designations, and organizational setup. ",
   },
   {
-    title: "Timesheet Management",
+    title: "Selfie attendance system",
     icon: images["./tick-badge.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Employees can mark their attendance by capturing a selfie through the app. ",
   },
   {
-    title: "Payroll Management",
+    title: "Geo fencing location",
     icon: images["./tick-badge.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Restrict attendance marking to specific GPS-based office or site locations. ",
   },
   {
-    title: "Roster Management",
+    title: "Project site Live location Tracking",
     icon: images["./tick-badge.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Monitor and manage employee attendance across multiple project locations. ",
   },
   {
-    title: "Leave Management",
+    title: "Approval Process",
     icon: images["./tick-badge.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Set multi-level approval flows for leave, timesheet, expenses, and more.",
   },
   {
-    title: "Report management",
+    title: "Roster free timesheet",
     icon: images["./tick-badge.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Let employees log work hours without fixed rosters — perfect for flexible teams. ",
+  },
+  {
+    title: "Exception in Automation",
+    icon: images["./tick-badge.png"],
+    description:
+      "Handle irregular cases like manual entries, missed punches, or custom rules. ",
+  },
+  {
+    title: "Hardware ready Attendance",
+    icon: images["./tick-badge.png"],
+    description:
+      "Easily integrate biometric or RFID devices for smooth attendance syncing. ",
+  },
+  {
+    title: "Error Free Payroll",
+    icon: images["./tick-badge.png"],
+    description:
+      "Ensure 100% accurate payroll by syncing attendance, tax, and overtime data.",
+  },
+  {
+    title: "Role based Security",
+    icon: images["./tick-badge.png"],
+    description:
+      "Control access with role-specific permissions across all HR modules.",
   },
 ];
 </script>

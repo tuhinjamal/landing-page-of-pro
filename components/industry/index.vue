@@ -17,7 +17,7 @@
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="bg-[#FEF2E9] border border-gray-100 px-[23px] py-[46px] rounded-2xl hover:shadow-md transition font-campton cursor-pointer"
+          class="bg-[#FEF2E9] border border-gray-100 px-[23px] py-[23px] rounded-2xl hover:shadow-md transition cursor-pointer"
         >
           <div class="grid grid-cols-[auto_1fr] gap-x-[24px] items-start">
             <img
@@ -52,40 +52,40 @@ const images = import.meta.glob("./*.png", {
 });
 const features = [
   {
-    title: "Employee Management:",
+    title: "Retail Chains & Super Market",
     icon: images["./tick-badge-black.png"],
     description:
       "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
   },
   {
-    title: "Timesheet Management",
+    title: "Logistic & Courier Service",
     icon: images["./tick-badge-black.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Monitor field staff check-ins, delivery schedules, and working hours with GPS-enabled attendance. Improve accountability and optimize logistics workforce management. ",
   },
   {
-    title: "Payroll Management",
+    title: "Construction & Realestate",
     icon: images["./tick-badge-black.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Handle multi-site attendance, project-based shifts, and contractor workforce with ease. Get real-time updates from on-site teams with mobile-based tracking.",
   },
   {
-    title: "Roster Management",
+    title: "Corporate & Tech Companies",
     icon: images["./tick-badge-black.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Automate HR processes, manage hybrid teams, and simplify payroll with full transparency. Built for fast-paced companies that value efficiency and security. ",
   },
   {
-    title: "Leave Management",
+    title: "Garments & Healthcare",
     icon: images["./tick-badge-black.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Simplify shift rotations, overtime handling, and mass employee attendance tracking. Designed for industries with large scale and dynamic workforces that impact. ",
   },
   {
-    title: "Report management",
+    title: "Educational Institute",
     icon: images["./tick-badge-black.png"],
     description:
-      "Track staff attendance across branches, manage shifts, and streamline payroll in busy retail environments. Ensure smooth operations with real-time workforce visibility. ",
+      "Manage teacher and staff attendance, leave, payroll, and academic calendars. Bring automation and order to everyday HR tasks in schools and colleges for admission and every documentation",
   },
 ];
 </script>

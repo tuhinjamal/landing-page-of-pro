@@ -10,7 +10,7 @@
     </div>
 
     <!-- Quote Text -->
-    <p class="text-sm md:text-base text-[#202A44] leading-relaxed font-campton">
+    <p class="text-sm md:text-base text-[#202A44] leading-relaxed">
       {{ testimonial.quote }}
     </p>
 
@@ -76,10 +76,10 @@
         </div>
 
         <!-- Name + Role -->
-        <p class="text-sm md:text-base font-campton font-semibold">
+        <p class="text-sm md:text-base font-semibold">
           {{ testimonial.name }},
         </p>
-        <p class="text-xs md:text-sm text-gray-600 font-campton">
+        <p class="text-xs md:text-sm text-gray-600">
           {{ testimonial.role }}
         </p>
       </div>
