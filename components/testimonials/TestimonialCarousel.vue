@@ -8,7 +8,7 @@
 
     <!-- Carousel -->
     <div
-      class="ml-0 md:ml-0 lg:ml-[120px] 2xl:ml-[240px] relative pb-[40px] px-[20px] md:px-[32px] lg:px-0 ]"
+      class="ml-0 md:ml-0 lg:ml-[120px] xl:ml-[120px] 2xl:ml-[240px] relative pb-[40px] px-[20px] md:px-[32px] lg:px-0 ]"
     >
       <div ref="carouselWrapper" class="overflow-hidden relative">
         <div

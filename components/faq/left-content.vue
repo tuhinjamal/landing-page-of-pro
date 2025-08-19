@@ -10,7 +10,7 @@
         @click="toggle(index)"
         class="w-full flex justify-between items-start md:items-center text-left px-4 py-4 font-[600] text-[12px] md:text-[16px] font-campton hover:bg-gray-50 not-italic gap-4"
       >
-        <span class="cursor-pointer">{{ item.question }}</span>
+        <span class="cursor-pointer leading-[160%]">{{ item.question }}</span>
         <span
           :class="
             activeIndex === index
@@ -27,7 +27,7 @@
       <transition name="accordion">
         <div
           v-if="activeIndex === index"
-          class="px-4 pb-4 text-[14px] font-[400] text-[#4D5569] leading-relaxed font-campton"
+          class="leading-[120%] px-4 pb-4 text-[14px] font-[400] text-[#4D5569] leading-relaxed font-campton"
         >
           {{ item.answer }}
         </div>

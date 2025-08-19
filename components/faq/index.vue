@@ -1,8 +1,10 @@
 <template>
   <div
-    class="py-[60px] lg:py-[120px] mx-[20px] md:mx-[32px] lg:mx-[120px] 2xl:mx-[240px]"
+    class="py-[60px] lg:py-[120px] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[240px]"
   >
-    <p class="text-center text-[28px] md:text-[40px] font-[700] mb-[48px]">
+    <p
+      class="leading-[120%] text-center text-[28px] md:text-[40px] font-[700] mb-[48px]"
+    >
       Frequently Asked <span class="text-[#F47920]"> Questions </span>
     </p>
     <div

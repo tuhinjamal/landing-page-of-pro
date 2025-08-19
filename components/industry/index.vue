@@ -1,10 +1,10 @@
 <template>
   <section id="industry">
     <div
-      class="bg-[#ffffff] mx-[20px] md:mx-[32px] lg:mx-[120px] 2xl:mx-[240px]"
+      class="bg-[#ffffff] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[240px]"
     >
       <p
-        class="text-[22px] font-vina md:text-[40px] 2xl:text-[40px] font-[700] mb-[40px] text-center mt-[120px]"
+        class="text-[22px] font-vina md:text-[40px] 2xl:text-[40px] font-[700] text-center mt-[120px] leading-[120%]"
       >
         <span class="text-[#F47920]"> Industry </span>
 
@@ -12,14 +12,14 @@
       </p>
 
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center mt-[40px]"
       >
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="bg-[#FEF2E9] border border-gray-100 px-[23px] py-[47px] 2xl:py-[60px] rounded-2xl hover:shadow-md transition font-campton cursor-pointer"
+          class="bg-[#FEF2E9] border border-gray-100 px-[23px] py-[46px] rounded-2xl hover:shadow-md transition font-campton cursor-pointer"
         >
-          <div class="grid grid-cols-[auto_1fr] gap-4 items-start">
+          <div class="grid grid-cols-[auto_1fr] gap-x-[24px] items-start">
             <img
               :src="feature.icon"
               alt="icon"
@@ -27,11 +27,13 @@
             />
             <div>
               <!-- </div> -->
-              <h3 class="text-[16px] font-[600] mb-[12px] md:mx-0 text-left">
+              <h3
+                class="text-[16px] font-[600] mb-[12px] md:mx-0 text-left leading-[160%]"
+              >
                 {{ feature.title }}
               </h3>
               <p
-                class="text-[13px] md:text-[14px] font-[400] text-[#202A44] leading-snug mx-auto md:mx-0 text-left"
+                class="text-[13px] md:text-[14px] font-[400] text-[#202A44] mx-auto md:mx-0 text-left leading-[160%]"
               >
                 {{ feature.description }}
               </p>

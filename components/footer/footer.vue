@@ -15,7 +15,7 @@
       </div>
     </div>
     <footer
-      class="py-[40px] md:py-[60px] mx-[20px] md:mx-[32px] lg:mx-[120px] 2xl:mx-[240px] text-white px-4"
+      class="py-[40px] md:py-[60px] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[240px] text-white px-4"
     >
       <div class="mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10">
         <!-- Left Column: Logo + Description -->
@@ -30,7 +30,7 @@
               class="w-[150px] h-[50px]"
             />
           </div>
-          <p class="text-[12px] font-campton font-[400]">
+          <p class="text-[12px] font-campton font-[400] leading-[180%]">
             This HR and Attendance Management System is developed by Inflack to
             simplify and streamline complex HR operations for modern businesses.
             With features like cloud-based attendance, automated payroll, shift
@@ -39,7 +39,7 @@
           </p>
         </div>
         <div
-          class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start text-center md:text-left"
+          class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start text-center md:text-left leading-[180%]"
         >
           <div class="">
             <ul class="space-y-2 cursor-pointer">

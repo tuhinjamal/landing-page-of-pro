@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative bg-[#F6F1F0] border border-[#F6F1F0] rounded-2xl shadow-sm w-[400px] p-[32px] lg:h-[334px]"
+    class="relative bg-[#F6F1F0] border border-[#F6F1F0] rounded-2xl shadow-sm w-[400px] p-[31px] lg:h-[334px]"
   >
     <div
       class="bg-white h-[56px] w-[56px] rounded-full flex justify-center items-center text-center"
@@ -14,13 +14,13 @@
 
     <!-- Quote Text -->
     <p
-      class="text-[12px] lg:text-[16px] font-[400] md:text-base text-[#202A44] leading-relaxed font-campton py-[32px]"
+      class="text-[12px] lg:text-[16px] font-[400] md:text-base text-[#202A44] font-campton my-[32px] leading-[160%]"
     >
       {{ testimonial.quote }}
     </p>
 
     <!-- Footer -->
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 leading-[160%]">
       <img
         :src="testimonial.avatar"
         :alt="testimonial.name"

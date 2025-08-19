@@ -52,7 +52,7 @@
       </button>
 
       <!-- Desktop Menu -->
-      <ul class="hidden lg:flex space-x-8 text-[16px] font-[600]">
+      <ul class="hidden lg:flex space-x-[32px] text-[16px] font-[600]">
         <li>
           <a
             href="#"

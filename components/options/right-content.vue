@@ -15,12 +15,12 @@
           <div>
             <!-- </div> -->
             <h3
-              class="text-[16px] font-[600] mb-[12px] mx-auto md:mx-0 text-left"
+              class="text-[16px] font-[600] mb-[12px] mx-auto md:mx-0 text-left leading-[160%]"
             >
               {{ feature.title }}
             </h3>
             <p
-              class="text-[13px] md:text-[14px] font-[400] text-[#202A44] leading-snug mx-auto md:mx-0 text-left"
+              class="text-[13px] md:text-[14px] font-[400] text-[#202A44] mx-auto md:mx-0 text-left leading-[160%]"
             >
               {{ feature.description }}
             </p>

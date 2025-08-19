@@ -1,9 +1,11 @@
 <template>
   <div
-    class="py-[60px] lg:py-[114px] mx-[20px] md:mx-[32px] lg:mx-[120px] 2xl:mx-[240px]"
+    class="py-[60px] lg:py-[114px] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[240px]"
     id="options"
   >
-    <p class="text-center text-[28px] md:text-[40px] font-[700] pb-[41px]">
+    <p
+      class="text-center text-[28px] md:text-[40px] font-[700] pb-[41px] leading-[120%]"
+    >
       Why <span class="text-[#F47920]"> Choose ProHR </span>
     </p>
     <div

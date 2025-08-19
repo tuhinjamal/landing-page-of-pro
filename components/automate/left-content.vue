@@ -1,6 +1,8 @@
 <template>
   <div class="">
-    <p class="text-[28px] md:text-[36px] lg:text-[38px] font-bold">
+    <p
+      class="text-[28px] md:text-[36px] lg:text-[38px] font-bold leading-[120%]"
+    >
       Automate
       <span class="text-[#F47920]"> Employee Attendance with AI </span>
       powered Mobile Application
@@ -10,7 +12,7 @@
       <div
         class="grid grid-cols-[auto_1fr] gap-4 justify-center items-center w-full mt-[16px]"
       >
-        <p class="text-[#0D121D] text-[14px] font-[400]">
+        <p class="text-[#0D121D] text-[14px] font-[400] leading-[160%]">
           Step into the world of seamless HR operation with best of the modules
           and top-notch technology. Enhance employee skills, knowledge, and
           overall performance through a comprehensive range of structured

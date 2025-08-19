@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center md:items-start">
     <p
-      class="text-[28px] md:text-[40px] lg:text-[40px] font-[700] text-center md:text-start"
+      class="text-[28px] leading-[120%] md:text-[40px] lg:text-[40px] font-[700] text-center md:text-start"
     >
       ProHR,
       <span class="text-[#F47920]">
@@ -11,35 +11,30 @@
     </p>
     <div class="mt-[24px]">
       <div
-        class="grid grid-cols-[auto_1fr] gap-4 justify-center items-center w-full border rounded-md py-2 px-4"
+        class="grid grid-cols-[auto_1fr] gap-x-[24px] justify-center items-center w-full border rounded-md px-[13px] py-[16px]"
       >
         <img src="../../assets/images/mark.png" alt="" />
-        <p class="text-[#0D121D] text-[16px]">
+        <p class="text-[#0D121D] text-[16px] leading-[160%] font-[600]">
           Automate and Simplify your branch-wise Staff Management with Roster,
           Attendance, Payroll.
         </p>
       </div>
-       
-    </div>
 
-    <div
-      class="grid grid-cols-[auto_1fr] gap-4 justify-center items-center w-full mt-[16px]"
-    >
-      <p class="text-[#0D121D] text-[14px] font-[400]">
+      <p class="text-[#0D121D] text-[14px] font-[400] mt-[16px] leading-[160%]">
         Step into the world of seamless HR operation with best of the modules
         and top -notch technology. Enhance employee skills, knowledge, and
         overall performance through a comprehensive range of structured training
         programs designed to foster professional growth and development. 
       </p>
+      <button
+        class="px-[30px] py-[10px] font-campton bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center"
+        @click="isOpen = true"
+      >
+        <p>Get a free demo</p>
+        <img src="../../assets/images/arrow-45-deg.png" alt="" />
+      </button>
+       
     </div>
-
-    <button
-      class="px-[30px] py-[10px] font-campton bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#ff9778] transition text-[#0D121D] hover:text-white cursor-pointer mt-[52px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center"
-      @click="isOpen = true"
-    >
-      <p>Get a free demo</p>
-      <img src="../../assets/images/arrow-45-deg.png" alt="" />
-    </button>
 
     <!-- modal -->
     <div
