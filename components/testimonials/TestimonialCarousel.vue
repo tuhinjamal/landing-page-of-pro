@@ -191,108 +191,36 @@ import TestimonialCard from "./TestimonialCard.vue";
 const testimonials = [
   {
     quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
+      "Managing teachers and staff attendance used to be a mess. ProHR solved it all in one place! This is really impressive",
+
+    name: "Abdul Hai",
     avatar: "https://i.pravatar.cc/100?img=1",
-    role: "CEO, Google",
+    role: "Director , BNM",
     rating: 4.5,
   },
   {
     quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
+      "ProHR made it so easy to manage our team across departments. It save hours every week on attendance and payroll. ",
+
+    name: "Nazmul Sheikh,",
     avatar: "https://i.pravatar.cc/100?img=2",
-    role: "CEO, Google",
+    role: "Director, Shajgoj",
     rating: 5,
   },
   {
     quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
+      "We love how smooth and user-friendly ProHR is. Our HR work is now faster and fully organized. ",
+
+    name: "Sinthia Islam,",
     avatar: "https://i.pravatar.cc/100?img=3",
-    role: "CEO, Google",
+    role: "Co-Founder , The Skin Cafe",
     rating: 4,
   },
   {
     quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
-    avatar: "https://i.pravatar.cc/100?img=4",
-    role: "CEO, Google",
-    rating: 4.8,
-  },
-  {
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
-    avatar: "https://i.pravatar.cc/100?img=1",
-    role: "CEO, Google",
-    rating: 4.5,
-  },
-  {
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
-    avatar: "https://i.pravatar.cc/100?img=2",
-    role: "CEO, Google",
-    rating: 5,
-  },
-  {
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
-    avatar: "https://i.pravatar.cc/100?img=3",
-    role: "CEO, Google",
-    rating: 4,
-  },
-  {
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
-    avatar: "https://i.pravatar.cc/100?img=4",
-    role: "CEO, Google",
-    rating: 4.8,
-  },
-  {
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
-    avatar: "https://i.pravatar.cc/100?img=1",
-    role: "CEO, Google",
-    rating: 4.5,
-  },
-  {
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
-    avatar: "https://i.pravatar.cc/100?img=2",
-    role: "CEO, Google",
-    rating: 5,
-  },
-  {
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
-    avatar: "https://i.pravatar.cc/100?img=3",
-    role: "CEO, Google",
-    rating: 4,
-  },
-  {
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    title: "I found very efficient!",
-    name: "David William",
+      "Managing teachers and staff attendance used to be a mess. ProHR solved it all in one place! This is really impressive",
+
+    name: "Abdul Hai",
     avatar: "https://i.pravatar.cc/100?img=4",
     role: "CEO, Google",
     rating: 4.8,

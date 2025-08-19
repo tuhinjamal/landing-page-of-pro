@@ -3,7 +3,7 @@
     <div
       v-for="(item, index) in faqs"
       :key="index"
-      class="border-t border-b border-gray-200 overflow-hidden mx-0 my-0 px-0 py-0"
+      class="border-t-2 border-b-2 border-gray-200 overflow-hidden mx-0 my-0 px-0 py-0"
     >
       <!-- Question -->
       <button
