@@ -7,7 +7,12 @@
     <Features />
     <Automate />
     <div class="bg-[#FEF2E9] m-0 p-0">
-      <Options />
+      <Roster />
+    </div>
+    <Options />
+
+    <div class="bg-[#FEF2E9] m-0 p-0">
+      <Security />
     </div>
     <Industry />
 
@@ -38,6 +43,8 @@ import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import Features from "~/components/features/features.vue";
 import Automate from "~/components/automate/index.vue";
+import Roster from "~/components/roster/index.vue";
+import Security from "~/components/security/index.vue";
 import Options from "~/components/options/index.vue";
 import Testimonials from "~/components/testimonials/TestimonialCarousel.vue";
 import Industry from "~/components/industry/index.vue";

@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center lg:items-end w-full">
     <img
-      src="../../assets/images/hero-image.png"
+      src="./hero-image.png"
       alt="hero image"
       :class="[
         'w-full h-full object-cover transition-all duration-500 ease-out',

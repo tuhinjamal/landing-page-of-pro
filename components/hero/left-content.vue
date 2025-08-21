@@ -3,14 +3,19 @@
     <!-- heading -->
     <p
       :class="[
-        'font-work text-[28px] leading-[120%] md:text-[40px] lg:text-[43.5px] font-extrabold text-center md:text-start transition-all duration-500 ease-out ',
+        'font-work text-[28px] leading-[120%] md:text-[40px] lg:text-[44px] 2xl:text-[58px] text-center md:text-start transition-all duration-500 ease-out font-extrabold',
         show.heading
           ? 'opacity-100 translate-y-0 blur-0'
           : 'opacity-0 translate-y-10 blur-sm',
       ]"
     >
-      ProHR, Top
-      <span class="text-[#F47920]"> Roster, Attendance & Payroll System </span>
+      ProHR The,
+      <span class="text-[#F47920]">
+        Best Roster, <br />
+        Attendance & Payroll
+        <br />
+        System
+      </span>
       in Bangladesh
     </p>
 
@@ -18,14 +23,21 @@
       <!-- feature box -->
       <div
         :class="[
-          'grid grid-cols-[auto_1fr] gap-x-[24px] justify-center items-center w-full border rounded-md px-[13px] py-[16px] transition-all duration-500 ease-out',
+          'grid grid-cols-[auto_1fr] gap-x-[24px]  justify-center items-center w-full border rounded-md px-[13px] py-[16px] transition-all duration-500 ease-out',
           show.feature
             ? 'opacity-100 translate-y-0 blur-0'
             : 'opacity-0 translate-y-10 blur-sm',
         ]"
       >
-        <img src="../../assets/images/mark.png" alt="" />
-        <p class="text-[#0D121D] text-[16px] leading-[160%] font-[600]">
+        <img
+          src="../../assets/images/mark.png"
+          alt=""
+          class="2xl:h-[50px] 2xl:w-[50px]"
+        />
+
+        <p
+          class="text-[#0D121D] text-[16px] lg:text-[17px] 2xl:text-[25px] leading-[160%] font-[600] 2xl:font-[550] 2xl:leading-[120%]"
+        >
           Automate and Simplify your branch-wise Staff Management with Roster,
           Attendance, Payroll.
         </p>
@@ -34,7 +46,7 @@
       <!-- paragraph -->
       <p
         :class="[
-          'text-[#0D121D] text-[14px] font-[400] mt-[16px] leading-[160%] transition-all duration-500 ease-out text-center md:text-start',
+          'text-[#0D121D] text-[14px] lg:text-[14.5px] 2xl:text-[18px] font-[400] mt-[16px] leading-[160%] transition-all duration-500 ease-out text-center md:text-start',
           show.paragraph
             ? 'opacity-100 translate-y-0 blur-0'
             : 'opacity-0 translate-y-10 blur-sm',
@@ -49,7 +61,7 @@
       <!-- button -->
       <button
         :class="[
-          'px-[24px] py-[12px] bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%] transition-all duration-500 ease-out w-full md:w-auto',
+          'px-[24px] py-[12px] bg-[#F47920] text-[16px] font-[600] rounded-lg hover:bg-[#DE6E1D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%] transition-all duration-500 ease-out w-full md:w-auto',
           show.button
             ? 'opacity-100 translate-y-0 blur-0'
             : 'opacity-0 translate-y-10 blur-sm',
@@ -76,6 +88,7 @@
         <button
           class="absolute top-4 right-4 text-gray-500 hover:text-black text-xl"
           @click="isOpen = false"
+          :disabled="loading"
         >
           ✕
         </button>
@@ -88,6 +101,14 @@
           Please fill up the form with necessary information so that we can
           contact you soon.
         </p>
+
+        <!-- success message -->
+        <div
+          v-if="successMessage"
+          class="bg-green-100 text-green-700 p-3 rounded mb-4"
+        >
+          {{ successMessage }}
+        </div>
 
         <!-- form -->
         <form @submit.prevent="handleSubmit" class="space-y-4">
@@ -109,8 +130,13 @@
               >Phone Number <span class="text-red-500">*</span></label
             >
             <div class="flex">
-              <select class="border rounded-l-md p-2 bg-gray-100">
+              <select
+                v-model="form.countryCode"
+                class="border rounded-l-md p-2 bg-gray-100"
+              >
                 <option value="+880">🇧🇩 +880</option>
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+1">🇺🇸 +1</option>
               </select>
               <input
                 type="tel"
@@ -169,9 +195,11 @@
 
           <button
             type="submit"
-            class="bg-[#F47920] text-black px-6 py-2 rounded-md hover:bg-[#DE6E1D] transition"
+            class="bg-[#F47920] text-black px-6 py-2 rounded-md hover:bg-[#DE6E1D] transition flex justify-center items-center gap-2"
+            :disabled="loading"
           >
-            Submit →
+            <span v-if="!loading">Submit →</span>
+            <span v-else>Sending...</span>
           </button>
         </form>
       </div>
@@ -181,8 +209,12 @@
 
 <script setup>
 import { reactive, ref, onMounted } from "vue";
+import axios from "axios";
 
 const isOpen = ref(false);
+const loading = ref(false);
+const successMessage = ref("");
+
 const show = reactive({
   heading: false,
   feature: false,
@@ -192,6 +224,7 @@ const show = reactive({
 
 const form = reactive({
   name: "",
+  countryCode: "+880",
   phone: "",
   email: "",
   company: "",
@@ -199,9 +232,34 @@ const form = reactive({
   notes: "",
 });
 
-const handleSubmit = () => {
-  console.log("Form submitted:", form);
-  isOpen.value = false;
+// Functional handleSubmit with loading & confirmation
+const handleSubmit = async () => {
+  loading.value = true;
+  successMessage.value = "";
+  try {
+    const payload = { ...form, phone: form.countryCode + form.phone };
+    const response = await axios.post("/api/demo-request", payload);
+
+    if (response.data.success) {
+      successMessage.value =
+        "Your request has been sent! Check your email for confirmation.";
+      // Clear form after short delay
+      setTimeout(() => {
+        Object.keys(form).forEach(
+          (key) => (form[key] = key === "countryCode" ? "+880" : "")
+        );
+        isOpen.value = false;
+        successMessage.value = "";
+      }, 2500);
+    } else {
+      alert(response.data.message || "Failed to send request.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Error sending request.");
+  } finally {
+    loading.value = false;
+  }
 };
 
 // Staggered animation

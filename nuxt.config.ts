@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   fonts: {
     google: {
       families: [
-        "Work Sans", // choose weights you need
+        "Campton", // choose weights you need
       ],
     },
   },

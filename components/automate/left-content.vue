@@ -1,11 +1,16 @@
 <template>
   <div class="">
-    <p
-      class="text-[28px] md:text-[36px] lg:text-[38px] font-bold leading-[120%]"
+    <button
+      class="text-[12px] md:text-[16px] font-[600] bg-[#309771] px-[24px] py-[12px] text-white rounded-lg"
     >
-      Automate
-      <span class="text-[#F47920]"> Employee Attendance with AI </span>
-      powered Mobile Application
+      AI Powerd Face Detected Attendace App
+    </button>
+    <p
+      class="text-[28px] md:text-[36px] lg:text-[38px] font-bold leading-[120%] mt-[16px]"
+    >
+      Automate your <br />
+      <span class="text-[#F47920]"> Employee Attendance </span><br />
+      with or without Roster
     </p>
 
     <div class="">
