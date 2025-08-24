@@ -8,6 +8,7 @@
 
         <button
           class="px-[24px] py-[12px] bg-white text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center w-full md:w-auto leading-[160%]"
+          @click="isOpenModal = true"
         >
           <p>Get a free demo</p>
           <img src="../../assets/images/arrow-45-deg.png" alt="" />
@@ -99,5 +100,15 @@
         </div>
       </div>
     </footer>
+  <Modal  :isOpen="isOpenModal" @close="isOpenModal = false" />
+    
   </div>
 </template>
+
+<script setup>
+import Modal from "../modal";
+
+const isOpenModal = ref(false);
+
+
+</script>

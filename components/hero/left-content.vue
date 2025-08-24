@@ -66,152 +66,23 @@
             ? 'opacity-100 translate-y-0 blur-0'
             : 'opacity-0 translate-y-10 blur-sm',
         ]"
-        @click="isOpen = true"
+        @click="isOpenModal = true"
       >
-        <p>Get a free demo</p>
+        <p>Get a free demo  </p>
         <img src="../../assets/images/arrow-45-deg.png" alt="" />
       </button>
     </div>
 
-    <!-- modal -->
-    <div
-      v-if="isOpen"
-      class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 transition-opacity duration-300 ease-out"
-    >
-      <div
-        class="bg-white rounded-lg shadow-lg w-[90%] md:w-[600px] p-6 relative transform transition-all duration-500 ease-out translate-y-10"
-        :class="
-          isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        "
-      >
-        <!-- close btn -->
-        <button
-          class="absolute top-4 right-4 text-gray-500 hover:text-black text-xl"
-          @click="isOpen = false"
-          :disabled="loading"
-        >
-          ✕
-        </button>
-
-        <!-- modal header -->
-        <h2 class="text-2xl font-bold mb-2">
-          Get <span class="text-[#F47920]">in Touch</span>
-        </h2>
-        <p class="text-gray-600 mb-6">
-          Please fill up the form with necessary information so that we can
-          contact you soon.
-        </p>
-
-        <!-- success message -->
-        <div
-          v-if="successMessage"
-          class="bg-green-100 text-green-700 p-3 rounded mb-4"
-        >
-          {{ successMessage }}
-        </div>
-
-        <!-- form -->
-        <form @submit.prevent="handleSubmit" class="space-y-4">
-          <div>
-            <label class="block text-sm font-medium mb-1"
-              >Name <span class="text-red-500">*</span></label
-            >
-            <input
-              type="text"
-              class="w-full border rounded-md p-2"
-              placeholder="Enter your name"
-              v-model="form.name"
-              required
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium mb-1"
-              >Phone Number <span class="text-red-500">*</span></label
-            >
-            <div class="flex">
-              <select
-                v-model="form.countryCode"
-                class="border rounded-l-md p-2 bg-gray-100"
-              >
-                <option value="+880">🇧🇩 +880</option>
-                <option value="+91">🇮🇳 +91</option>
-                <option value="+1">🇺🇸 +1</option>
-              </select>
-              <input
-                type="tel"
-                class="w-full border-t border-b border-r rounded-r-md p-2"
-                placeholder="Phone Number"
-                v-model="form.phone"
-                required
-              />
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium mb-1"
-              >Email Address <span class="text-red-500">*</span></label
-            >
-            <input
-              type="email"
-              class="w-full border rounded-md p-2"
-              placeholder="Enter your Email address"
-              v-model="form.email"
-              required
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium mb-1">Company Name</label>
-            <input
-              type="text"
-              class="w-full border rounded-md p-2"
-              placeholder="Enter your Company Name"
-              v-model="form.company"
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium mb-1"
-              >Employee Number</label
-            >
-            <input
-              type="number"
-              class="w-full border rounded-md p-2"
-              placeholder="Total Number of Employee"
-              v-model="form.employees"
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium mb-1">Notes</label>
-            <textarea
-              class="w-full border rounded-md p-2"
-              placeholder="write any specific notes.."
-              rows="3"
-              v-model="form.notes"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="bg-[#F47920] text-black px-6 py-2 rounded-md hover:bg-[#DE6E1D] transition flex justify-center items-center gap-2"
-            :disabled="loading"
-          >
-            <span v-if="!loading">Submit →</span>
-            <span v-else>Sending...</span>
-          </button>
-        </form>
-      </div>
-    </div>
+    <Modal  :isOpen="isOpenModal" @close="isOpenModal = false" />
+   
   </div>
 </template>
 
 <script setup>
 import { reactive, ref, onMounted } from "vue";
-import axios from "axios";
+import Modal from "../modal";
 
-const isOpen = ref(false);
+const isOpenModal = ref(false);
 const loading = ref(false);
 const successMessage = ref("");
 
@@ -222,45 +93,7 @@ const show = reactive({
   button: false,
 });
 
-const form = reactive({
-  name: "",
-  countryCode: "+880",
-  phone: "",
-  email: "",
-  company: "",
-  employees: "",
-  notes: "",
-});
 
-// Functional handleSubmit with loading & confirmation
-const handleSubmit = async () => {
-  loading.value = true;
-  successMessage.value = "";
-  try {
-    const payload = { ...form, phone: form.countryCode + form.phone };
-    const response = await axios.post("/api/demo-request", payload);
-
-    if (response.data.success) {
-      successMessage.value =
-        "Your request has been sent! Check your email for confirmation.";
-      // Clear form after short delay
-      setTimeout(() => {
-        Object.keys(form).forEach(
-          (key) => (form[key] = key === "countryCode" ? "+880" : "")
-        );
-        isOpen.value = false;
-        successMessage.value = "";
-      }, 2500);
-    } else {
-      alert(response.data.message || "Failed to send request.");
-    }
-  } catch (error) {
-    console.error(error);
-    alert("Error sending request.");
-  } finally {
-    loading.value = false;
-  }
-};
 
 // Staggered animation
 onMounted(() => {

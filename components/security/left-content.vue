@@ -79,7 +79,7 @@ const faqs = [
   {
     question: "Employee Data Security",
     answer:
-      "ProHR ensures the highest standards of employee data protection through multi-layered security measures. Built on a secure cloud infrastructure, ProHR leverages Firewalla, Cloudflare, and static IP–based security protocols, creating a robust three-layer defense system against breaches.",
+      "As a comprehensive HR solution, ProHR safeguards all confidential employee information within a protected, firewall-secured environment. Every piece of data is encrypted, stored, and managed with precision — ensuring compliance, preventing leaks, and maintaining trust. ",
   },
   {
     question: "Secure and Reliable Platform",
