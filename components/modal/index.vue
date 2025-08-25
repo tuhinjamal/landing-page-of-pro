@@ -3,7 +3,7 @@
     <!-- modal -->
     <div
       v-if="isOpen && !showToast"
-      class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 transition-opacity duration-300 ease-out overflow-y-scroll"
+      class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 transition-opacity duration-300 ease-out overflow-y-hidden"
     >
       <div
         class="rounded-lg shadow-lg p-6 relative transform transition-all duration-500 ease-out translate-y-0 py-[100px]"
@@ -17,7 +17,9 @@
         >
           <div class="flex justify-between items-start">
             <!-- modal header -->
-            <p class="text-[25px] md:text-[40px] font-bold mx-0 my-0 px-0 py-0">
+            <p
+              class="text-[25px] md:text-[30px] 2xl:text-[40px] font-bold mx-0 my-0 px-0 py-0 leading-[120%]"
+            >
               Want to see <br />
               <span class="text-[#F47920]">How ProHR Works?</span>
             </p>
@@ -30,7 +32,7 @@
             </button>
           </div>
 
-          <p class="text-gray-600 mb-6">
+          <p class="text-gray-600 mb-6 text-[12px] lg:text-[16px]">
             Please fill up the form with necessary information so that we can
             contact you soon.
           </p>

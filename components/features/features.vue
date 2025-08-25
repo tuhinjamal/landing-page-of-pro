@@ -18,7 +18,9 @@
           :key="index"
           class="bg-white border border-[#E9EAEC] px-[23px] py-[47px] rounded-3xl hover:shadow-md hover:border-[#F47920] transition cursor-pointer"
         >
-          <div class="bg-[#FEF2E9] rounded p-[8px] w-[56px] h-[56px] mb-[24px]">
+          <div
+            class="bg-[#FEF2E9] rounded-xl p-[8px] w-[56px] h-[56px] mb-[24px]"
+          >
             <img :src="feature.icon" alt="icon" class="mx-auto md:mx-0" />
           </div>
 
@@ -53,62 +55,62 @@
 </template>
 
 <script setup>
-const images = import.meta.glob("./*.png", {
+const images = import.meta.glob("./*.svg", {
   eager: true,
   import: "default",
 });
 const features = [
   {
     title: "Employee Management",
-    icon: images["./employee.png"],
+    icon: images["./employee.svg"],
     description:
       "Manage your employee database effortlessly. Personal info, job details, department-wise breakdowns, status updates — all from a centralized HR dashboard.  ",
   },
   {
     title: "Timesheet Management",
-    icon: images["./timesheet.png"],
+    icon: images["./timesheet.svg"],
     description:
       "Track work hours with accuracy. Let your team submit timesheets, monitor progress, and stay on top of every billable/non-billable hour with ease.",
   },
   {
     title: "Geo-Fencing",
-    icon: images["./geo.png"],
+    icon: images["./geo.svg"],
     description:
       "Track your employee attendance with location based geo-fencing process and get automated timesheet.",
   },
   {
     title: "Payroll Management",
-    icon: images["./payroll.png"],
+    icon: images["./payroll.svg"],
     description:
       "Automate salary calculations, generate payslips, manage increments, and ensure timely disbursements — all under a secure and reliable payroll engine.",
   },
   {
     title: "Roster Management",
-    icon: images["./roster.png"],
+    icon: images["./roster.svg"],
     description:
       "Manage your employee database effortlessly. Personal info, job details, department-wise breakdowns, status updates — all from a centralized HR dashboard. ",
   },
   {
     title: "With & Without Roster",
-    icon: images["./no-roster.png"],
+    icon: images["./no-roster.svg"],
     description:
       "Manage and take your employee attendance with & without roster. A roster free employee timesheet will be created automatically as like rostered employees.",
   },
   {
     title: "Leave Management",
-    icon: images["./leave.png"],
+    icon: images["./leave.svg"],
     description:
       "Digital leave applications made easy. Configure leave policies, track balances, approve requests from mobile or web, and maintain records seamlessly. ",
   },
   {
     title: "Report management",
-    icon: images["./report.png"],
+    icon: images["./report.svg"],
     description:
       "From attendance logs to payroll summaries, get detailed reports instantly. Custom filters and export options available for all modules and individual goals.",
   },
   {
     title: "Face Recognition Mobile App",
-    icon: images["./face.png"],
+    icon: images["./face.svg"],
     description:
       "Register your employee face and give attendance with & without roster through employee personal device or office recognized device.",
   },

@@ -11,10 +11,7 @@
     >
       ProHR The,
       <span class="text-[#F47920]">
-        Best Roster, <br />
-        Attendance & Payroll
-        <br />
-        System
+        Best Roster, Attendance & Payroll System
       </span>
       in Bangladesh
     </p>
@@ -29,11 +26,7 @@
             : 'opacity-0 translate-y-10 blur-sm',
         ]"
       >
-        <img
-          src="../../assets/images/mark.png"
-          alt=""
-          class="2xl:h-[50px] 2xl:w-[50px]"
-        />
+        <img src="./shield_icon.svg" alt="" class="2xl:h-[50px] 2xl:w-[50px]" />
 
         <p
           class="text-[#0D121D] text-[16px] lg:text-[17px] 2xl:text-[25px] leading-[160%] font-[600] 2xl:font-[550] 2xl:leading-[120%]"
@@ -68,13 +61,12 @@
         ]"
         @click="isOpenModal = true"
       >
-        <p>Get a free demo  </p>
+        <p>Get a free demo</p>
         <img src="../../assets/images/arrow-45-deg.png" alt="" />
       </button>
     </div>
 
-    <Modal  :isOpen="isOpenModal" @close="isOpenModal = false" />
-   
+    <Modal :isOpen="isOpenModal" @close="isOpenModal = false" />
   </div>
 </template>
 
@@ -92,8 +84,6 @@ const show = reactive({
   paragraph: false,
   button: false,
 });
-
-
 
 // Staggered animation
 onMounted(() => {

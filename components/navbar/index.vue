@@ -97,22 +97,12 @@
             >Why Choose ProHR </a
           >
         </li>
-        <li>
-          <a
-            href="#"
-            @click.prevent="scrollTo('testimonials')"
-            :class="{
-              'text-[#F47920] font-[600]': activeSection === 'testimonials',
-            }"
-            class="transition-colors hover:text-[#F47920]"
-            >About</a
-          >
-        </li>
       </ul>
 
       <!-- CTA Buttons -->
       <div class="hidden lg:flex">
-        <button  @click="isOpenModal = true"
+        <button
+          @click="isOpenModal = true"
           class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
         >
           <p>Get a free demo</p>
@@ -174,7 +164,8 @@
           >
             Get a free demo
           </button> -->
-          <button  @click="isOpenModal = true"
+          <button
+            @click="isOpenModal = true"
             class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
           >
             <p>Get a free demo</p>
@@ -184,8 +175,7 @@
       </ul>
     </transition>
   </nav>
-    <Modal  :isOpen="isOpenModal" @close="isOpenModal = false" />
-
+  <Modal :isOpen="isOpenModal" @close="isOpenModal = false" />
 </template>
 
 <script setup>

@@ -36,6 +36,23 @@
         Copyright ©2025 | Inflack Limited
       </p>
     </div>
+    <div>
+      <a
+        href="https://wa.me/8801888268886?text=Hi%20I%20am%20interested%20in%20your%20services"
+        class="fixed bottom-24 right-6 z-[100] bg-green-500 rounded-full p-3 text-white shadow-lg transition-transform duration-300 hover:scale-110"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="./whatsapp.svg" alt="whatsapp" />
+      </a>
+      <!-- scroll to top -->
+      <button
+        @click="scrollToTop"
+        class="fixed bottom-6 right-6 z-[100] bg-[#F47920] rounded-full p-3 text-white shadow-lg transition-transform duration-300 hover:scale-110"
+      >
+        <img src="./scroll.svg" alt="scroll to top" />
+      </button>
+    </div>
   </div>
 </template>
 <script setup>
@@ -50,4 +67,7 @@ import Testimonials from "~/components/testimonials/TestimonialCarousel.vue";
 import Industry from "~/components/industry/index.vue";
 import Faq from "~/components/faq/index.vue";
 import Footer from "~/components/footer/footer.vue";
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 </script>
