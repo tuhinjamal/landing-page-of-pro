@@ -47,8 +47,9 @@
       </a>
       <!-- scroll to top -->
       <button
-        @click="scrollToTop"
+        v-if="showButton"
         class="fixed bottom-6 right-6 z-[100] bg-[#F47920] rounded-full p-3 text-white shadow-lg transition-transform duration-300 hover:scale-110"
+        @click="scrollToTop"
       >
         <img src="./scroll.svg" alt="scroll to top" />
       </button>
@@ -67,7 +68,22 @@ import Testimonials from "~/components/testimonials/TestimonialCarousel.vue";
 import Industry from "~/components/industry/index.vue";
 import Faq from "~/components/faq/index.vue";
 import Footer from "~/components/footer/footer.vue";
+import { ref, onMounted, onUnmounted } from "vue";
+
+const showButton = ref(false);
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
+const handleScroll = () => {
+  showButton.value = window.scrollY > 1000;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
