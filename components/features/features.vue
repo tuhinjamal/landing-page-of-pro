@@ -43,7 +43,7 @@
           Ready to Automate your HR Management?
         </p>
         <img
-          src="../../assets/images/play-button.png"
+          src="./play-button.svg"
           alt="play button"
           class="mx-auto mt-[48px] w-[90px] h-[90px]"
         />

@@ -38,7 +38,9 @@
           }}
         </span>
         /
-        <span>{{ originalCount }}</span>
+        <span>{{
+          originalCount < 10 ? `0${originalCount}` : originalCount
+        }}</span>
       </div>
 
       <div class="flex justify-center items-center gap-2">

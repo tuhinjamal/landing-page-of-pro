@@ -32,7 +32,7 @@
             />
           </div>
           <p
-            class="text-[12px] font-[400] leading-[180%] lg:pr-[150px] 2xl:pr-[300px]"
+            class="text-[14px] font-[400] leading-[180%] lg:pr-[100px] 2xl:pr-[250px]"
           >
             This HR and Attendance Management System is developed by Inflack to
             simplify and streamline complex HR operations for modern businesses.
@@ -45,25 +45,46 @@
           class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start text-center md:text-left leading-[180%]"
         >
           <div class="">
-            <ul class="space-y-2 cursor-pointer">
+            <ul class="cursor-pointer">
               <li>
                 <h4 class="font-[600] text-[14px] text-[#F47920] mb-3">Menu</h4>
               </li>
-              <li class="text-[12px] py-[5px] font-[400]">Industry We Serve</li>
-              <li class="text-[12px] py-[5px] font-[400]">Features</li>
-              <li class="text-[12px] py-[5px] font-[400]">Benefit</li>
+              <li
+                class="text-[14px] font-[400]"
+                @click.prevent="scrollTo('industry')"
+              >
+                Industry We Serve
+              </li>
+              <li
+                class="text-[14px] font-[400]"
+                @click.prevent="scrollTo('features')"
+              >
+                Features
+              </li>
+              <li
+                class="text-[14px] font-[400]"
+                @click.prevent="scrollTo('faq')"
+              >
+                FAQ
+              </li>
             </ul>
           </div>
           <div class="">
-            <ul class="space-y-2 cursor-pointer">
+            <ul class="cursor-pointer">
               <li>
                 <h4 class="font-[600] text-[14px text-[#F47920] mb-3">
                   About Us
                 </h4>
               </li>
-              <li class="text-[12px] py-[5px] font-[400]">Our Company</li>
-              <li class="text-[12px] py-[5px] font-[400]">Contact Us</li>
-              <li class="text-[12px] py-[5px] font-[400]">Blog</li>
+              <li class="text-[14px] font-[400]">
+                <a href="https://inflack.com/" target="_blank">Our Company</a>
+              </li>
+              <li class="text-[14px] font-[400]">
+                <a href="https://inflack.com/" target="_blank">Contact Us</a>
+              </li>
+              <li class="text-[14px] font-[400]">
+                <a href="https://inflack.com/blog/" target="_blank">Blog</a>
+              </li>
             </ul>
           </div>
 
@@ -74,34 +95,36 @@
                   Social Media
                 </h4>
               </li>
-              <li
-                class="py-[5px] flex items-center gap-2 text-[12px] font-[400]"
-              >
+              <li class="flex items-center gap-2 text-[14px] font-[400]">
                 <img src="./facebook.svg" alt="" />
 
-                Facebook
+                <a
+                  href="https://web.facebook.com/inflack/?_rdc=1&_rdr#"
+                  target="_blank"
+                  >Facebook</a
+                >
               </li>
-              <li
-                class="py-[5px] flex items-center gap-2 text-[12px] font-[400]"
-              >
+              <li class="flex items-center gap-2 text-[14px] font-[400]">
                 <img src="./insta.svg" alt="" />
-
-                Instagram
+                <a
+                  href="https://www.instagram.com/inflack_limited"
+                  target="_blank"
+                  >Instagram</a
+                >
               </li>
-              <li
-                class="py-[5px] flex items-center gap-2 text-[12px] font-[400]"
-              >
+              <li class="flex items-center gap-2 text-[14px] font-[400]">
                 <img src="./x.svg" alt="" />
 
-                X (Fr Twitter)
+                <a href="https://x.com/inflack" target="_blank"
+                  >X (Fr Twitter)</a
+                >
               </li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
-  <Modal  :isOpen="isOpenModal" @close="isOpenModal = false" />
-    
+    <Modal :isOpen="isOpenModal" @close="isOpenModal = false" />
   </div>
 </template>
 
@@ -109,6 +132,12 @@
 import Modal from "../modal";
 
 const isOpenModal = ref(false);
-
-
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+    activeSection.value = id;
+    isOpen.value = false; // Close mobile nav
+  }
+}
 </script>

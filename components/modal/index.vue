@@ -2,7 +2,7 @@
   <div>
     <!-- modal -->
     <div
-      v-if="isOpen"
+      v-if="isOpen && !showToast"
       class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 transition-opacity duration-300 ease-out overflow-y-scroll"
     >
       <div
@@ -12,10 +12,12 @@
         "
       >
         <!-- close btn -->
-        <div class="bg-white p-[24px] rounded-2xl">
+        <div
+          class="bg-white p-[16px] md:p-[24px] rounded-2xl w-[300px] h-[552px] md:w-[500px] md:h-[498px]"
+        >
           <div class="flex justify-between items-start">
             <!-- modal header -->
-            <p class="text-[40px] font-bold mx-0 my-0 px-0 py-0">
+            <p class="text-[25px] md:text-[40px] font-bold mx-0 my-0 px-0 py-0">
               Want to see <br />
               <span class="text-[#F47920]">How ProHR Works?</span>
             </p>
@@ -40,24 +42,6 @@
           >
             {{ successMessage }}
           </div> -->
-          <div v-if="showToast" class="flex justify-center">
-            <div
-              class="relative shadow-lg bg-white w-[335px] h-[177px] transition-all duration-500 ease-out"
-            >
-              <div
-                class="flex flex-col justify-center items-center py-[24px] px-[24px]"
-              >
-                <img
-                  src="./submit.png"
-                  alt="success"
-                  class="h-[40px] w-[40px]"
-                />
-                <p class="text-[#F47920] text-[20px] font-bold">Submitted</p>
-                <p>{{ successMessage }}</p>
-              </div>
-              <!--  -->
-            </div>
-          </div>
 
           <!-- form -->
           <form @submit.prevent="handleSubmit" class="space-y-4">
@@ -131,6 +115,25 @@
         <!-- success toast -->
       </div>
     </div>
+    <div
+      v-if="showToast"
+      class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 transition-opacity duration-300 ease-out overflow-y-scroll"
+    >
+      <div v-if="showToast" class="flex justify-center">
+        <div
+          class="relative rounded-lg shadow-2xl bg-white w-[335px] h-[177px] transition-all duration-500 ease-out"
+        >
+          <div
+            class="flex flex-col justify-center items-center py-[24px] px-[24px]"
+          >
+            <img src="./submit.png" alt="success" class="h-[40px] w-[40px]" />
+            <p class="text-[#F47920] text-[20px] font-bold">Submitted</p>
+            <p class="text-center">{{ successMessage }}</p>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -172,6 +175,7 @@ const showToast = ref(false);
 const handleSubmit = async () => {
   loading.value = true;
   successMessage.value = "";
+  // showToast.value = true;
   try {
     const payload = { ...form, phone: form.countryCode + form.phone };
     const response = await axios.post("/api/demo-request", payload);

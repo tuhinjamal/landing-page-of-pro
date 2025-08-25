@@ -1,5 +1,6 @@
 <template>
   <div
+    id="faq"
     class="py-[60px] lg:my-[120px] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[240px] border-t border-gray-200"
   >
     <p

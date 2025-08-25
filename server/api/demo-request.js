@@ -17,8 +17,8 @@ export default defineEventHandler(async (event) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "tuhinjamal1@gmail.com",
-        pass: "ffaa zajh ayey wstc", // Use env variable
+        user: "sales.inflack@gmail.com",
+        pass: "bsev zbyy elhc sxpm", // Use env variable
       },
     });
 
@@ -27,9 +27,9 @@ export default defineEventHandler(async (event) => {
     console.log("SMTP verified successfully");
 
     const mailOptionsAdmin = {
-      from: `"ProHR Demo Request" <tuhinjamal1@gmail.com>`,
-      to: "tuhinjamal1@gmail.com",
-      subject: "🌟 New Demo Request Received",
+      from: `"ProHR Demo Request" <sales.inflack@gmail.com>`,
+      to: "sales.inflack@gmail.com",
+      subject: `🌟 ${name} Has Asked for a Free Demo Request`,
       html: `
       <div style="font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px;">
         <div style="max-width: 600px; margin: auto; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Company:</strong> ${company}</p>
             <p><strong>Employees:</strong> ${employees}</p>
-            <p><strong>Notes:</strong> ${notes || "N/A"}</p>
+            
           </div>
           <div style="background:#f4f4f4; text-align:center; padding:15px; font-size:12px; color:#777;">
             You are receiving this email because a new demo request was submitted.
@@ -53,9 +53,9 @@ export default defineEventHandler(async (event) => {
     };
 
     const mailOptionsUser = {
-      from: `"ProHR Team" <tuhinjamal1@gmail.com>`,
+      from: `"ProHR Team" <sales.inflack@gmail.com>`,
       to: email,
-      subject: "✅ Your Demo Request is Received",
+      subject: ` ✅ Hello ${name}, Your Demo Request is Received`,
       html: `
   <div style="font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px;">
     <div style="max-width: 600px; margin: auto; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">

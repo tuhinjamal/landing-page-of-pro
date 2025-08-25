@@ -17,7 +17,7 @@
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="bg-[#FEF2E9] border border-gray-100 px-[23px] py-[23px] rounded-2xl hover:shadow-md transition cursor-pointer"
+          class="bg-[#FEF2E9] border border-gray-100 px-[23px] py-[23px] rounded-2xl hover:shadow-md transition cursor-pointer hover:border-[#F47920]"
         >
           <div class="grid grid-cols-[auto_1fr] gap-x-[20px] items-start">
             <!-- <img

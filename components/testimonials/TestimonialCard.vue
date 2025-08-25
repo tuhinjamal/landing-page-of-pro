@@ -1,9 +1,7 @@
 <template>
-  <div
-    class="relative bg-[#FFFFFF] rounded-2xl shadow-sm w-[400px] lg:h-[334px]"
-  >
+  <div class="relative bg-[#FFFFFF] rounded-2xl shadow-sm w-[400px] h-[334px]">
     <div
-      class="mt-[32px] ml-[31px] bg-white h-[56px] w-[56px] rounded-full flex justify-center items-center text-center"
+      class="mt-[32px] ml-[31px] bg-gray-100 h-[56px] w-[56px] rounded-full flex justify-center items-center text-center"
     >
       <img
         src="../../assets/images/double-quote.png"
@@ -14,7 +12,7 @@
 
     <!-- Quote Text -->
     <p
-      class="text-[12px] lg:text-[16px] font-[400] md:text-base text-[#202A44] leading-[160%] mx-[31px] my-[32px]"
+      class="text-[12px] lg:text-[16px] font-[400] md:text-base text-[#202A44] leading-[160%] mx-[31px] my-[32px] line-clamp-2"
     >
       {{ testimonial.quote }}
     </p>

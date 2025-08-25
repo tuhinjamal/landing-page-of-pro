@@ -23,7 +23,7 @@
     <div class="bg-[#022235]">
       <Footer />
       <div
-        class="flex flex-col md:flex-row justify-center items-center md:gap-[100px] text-[12px] border-[#4D5569] border-t py-6 border-b text-white"
+        class="flex flex-col md:flex-row justify-center items-center md:gap-[100px] text-[14px] border-[#4D5569] border-t py-6 border-b text-white"
       >
         <p>Terms & Conditions</p>
         <p>Privacy Policy</p>

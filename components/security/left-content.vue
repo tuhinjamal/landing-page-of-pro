@@ -22,17 +22,13 @@
       </div>
     </div>
     <section class="mt-[40px]">
-      <div
-        v-for="(item, index) in faqs"
-        :key="index"
-        class="overflow-hidden mx-0 my-0 px-0 py-0"
-      >
+      <div v-for="(item, index) in faqs" :key="index" class="">
         <!-- Question -->
         <button
           @click="toggle(index)"
-          class="w-full flex justify-between items-start md:items-center text-left px-4 py-4 font-[600] text-[12px] md:text-[16px] not-italic gap-4"
+          class="w-full flex justify-between items-start md:items-center text-left py-4 font-[600] text-[12px] md:text-[16px] not-italic gap-4"
         >
-          <span class="cursor-pointer leading-[160%] flex gap-4"
+          <span class="cursor-pointer leading-[160%] justify-center flex gap-4"
             ><img src="./right-arrow.png" alt="" /> {{ item.question }}</span
           >
           <span
@@ -61,6 +57,7 @@
             {{ item.answer }}
           </div>
         </transition>
+        <hr v-if="index == 0" class="text-gray-200" />
       </div>
     </section>
   </div>
