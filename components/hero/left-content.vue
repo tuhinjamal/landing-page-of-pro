@@ -9,7 +9,7 @@
           : 'opacity-0 translate-y-10 blur-sm',
       ]"
     >
-      ProHR The,
+      ProHR: The,
       <span class="text-[#F47920]">
         Best Roster, Attendance & Payroll System
       </span>

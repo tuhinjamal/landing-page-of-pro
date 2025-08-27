@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="block bg-[#F47920] mt-[120px]">
+    <!-- <div class="block bg-[#F47920] mt-[120px]">
       <div class="py-[60px] lg:py-[100px]">
         <p
           class="text-center text-[28px] md:text-[35px] lg:text-[40px] font-[700] text-white leading-[120%]"
@@ -50,7 +50,7 @@
           class="mx-auto mt-[48px] w-[90px] h-[90px]"
         />
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 

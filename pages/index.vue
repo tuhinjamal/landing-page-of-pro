@@ -38,21 +38,22 @@
     </div>
     <div>
       <a
-        href="https://wa.me/8801888268886?text=Hi%20I%20am%20interested%20in%20your%20services"
-        class="fixed bottom-24 right-6 z-[100] bg-green-500 rounded-full p-3 text-white shadow-lg transition-transform duration-300 hover:scale-110"
+        href="https://wa.me/8801888268886?text=Hello,%20can%20I%20get%20a%20demo%20?"
+        class="fixed bottom-6 right-6 z-[100] bg-green-500 rounded-2xl py-3 px-4 text-white shadow-lg transition-transform duration-300 hover:scale-110 flex justify-center items-center gap-2"
         target="_blank"
         rel="noopener noreferrer"
       >
         <img src="./whatsapp.svg" alt="whatsapp" />
+        <p class="mx-0 my-0 px-0 py-0 font-[700]">Message</p>
       </a>
       <!-- scroll to top -->
-      <button
+      <!-- <button
         v-if="showButton"
         class="fixed bottom-6 right-6 z-[100] bg-[#F47920] rounded-full p-3 text-white shadow-lg transition-transform duration-300 hover:scale-110"
         @click="scrollToTop"
       >
         <img src="./scroll.svg" alt="scroll to top" />
-      </button>
+      </button> -->
     </div>
   </div>
 </template>

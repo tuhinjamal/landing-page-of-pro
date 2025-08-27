@@ -56,13 +56,25 @@
             />
 
             <div class="flex gap-4">
-              <select
+              <!-- <select
                 v-model="form.countryCode"
                 class="border border-[#6A7082] rounded-l-md p-2 bg-gray-100"
               >
                 <option value="+880">🇧🇩 +880</option>
                 <option value="+91">🇮🇳 +91</option>
                 <option value="+1">🇺🇸 +1</option>
+              </select> -->
+              <select
+                v-model="form.countryCode"
+                class="border border-[#6A7082] rounded-l-md p-2 bg-gray-100"
+              >
+                <option
+                  v-for="country in countryCodes"
+                  :key="country.dial_code"
+                  :value="country.dial_code"
+                >
+                  {{ country.emoji }} {{ country.dial_code }}
+                </option>
               </select>
               <input
                 type="tel"
@@ -94,9 +106,11 @@
                 class="w-full border border-[#6A7082] rounded-md p-2 text-[#6A7082] bg-white"
               >
                 <option value="">Select Company Size</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="20+">20+</option>
+                <option value="10">0-10</option>
+                <option value="20">11-20</option>
+                <option value="50">21-50</option>
+                <option value="50+">51-100</option>
+                <option value="100+">100+</option>
               </select>
             </div>
 
@@ -142,7 +156,7 @@
 <script setup>
 import axios from "axios";
 import { reactive, ref, defineProps, defineEmits } from "vue";
-
+import countryCodes from "./countryCodes.json"; // adjust path if needed
 // props
 const props = defineProps({
   isOpen: {
@@ -184,7 +198,7 @@ const handleSubmit = async () => {
 
     if (response.data.success) {
       successMessage.value =
-        "Your request has been sent! Check your email for confirmation.";
+        "Thanks for Contacting us. We will get back to you soon. card ta arektu boro kore den";
       // Clear form after short delay
       // Show toast
       showToast.value = true;
