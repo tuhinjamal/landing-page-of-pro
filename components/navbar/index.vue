@@ -11,7 +11,7 @@
         class="text-2xl font-bold tracking-wider flex items-center space-x-1 cursor-pointer"
       >
         <!-- <img src="./logo.svg" alt="ProHR Logo" class="h-8" /> -->
-        <img src="../../assets/images/nav-logo-pro-hr.png" alt="" />
+        <img src="./nav-logo.png" alt="" />
       </div>
 
       <!-- Hamburger Icon -->
@@ -100,7 +100,13 @@
       </ul>
 
       <!-- CTA Buttons -->
-      <div class="hidden lg:flex">
+      <div class="hidden lg:flex gap-[16px]">
+        <button
+          class="px-[24px] py-[11px] bg-transparent border text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white"
+          disabled
+        >
+          <p>+880 1708 006168</p>
+        </button>
         <button
           @click="isOpenModal = true"
           class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
@@ -159,14 +165,17 @@
         </li>
 
         <li>
-          <!-- <button
-            class=" text-[16px] font-[500] w-full text-left bg-[#F47920] px-[30px] py-[10px] rounded hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white"
+          <button
+            class="w-full px-[24px] py-[11px] bg-transparent border text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white"
+            disabled
           >
-            Get a free demo
-          </button> -->
+            <p>+880 1708 006168</p>
+          </button>
+        </li>
+        <li>
           <button
             @click="isOpenModal = true"
-            class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
+            class="w-full px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
           >
             <p>Get a free demo</p>
             <img src="../../assets/images/arrow-45-deg.png" alt="" />

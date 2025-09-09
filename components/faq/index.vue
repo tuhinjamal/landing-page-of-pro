@@ -11,8 +11,8 @@
     <div
       class="grid grid-cols-1 gap-[80px] lg:grid-cols-2 justify-center items-start"
     >
-      <leftContent class="order-2 lg:order-1" />
-      <rightContent class="order-1 lg:order-2" />
+      <leftContent class="order-2 lg:order-2" />
+      <rightContent class="order-1 lg:order-1" />
     </div>
   </div>
 </template>

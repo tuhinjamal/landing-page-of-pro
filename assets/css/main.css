@@ -6,12 +6,30 @@
 
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Work Sans";
+  src: url("./work-sans/WorkSans-Regular.ttf") format("woff2"),
+    url("./work-sans/WorkSans-Regular.ttf") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("./work-sans/WorkSans-Bold.ttf") format("woff2"),
+    url("./work-sans/WorkSans-Bold.ttf") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Campton", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 .font-work {
-  font-family: "Campton", sans-serif;
+  font-family: "Campton";
 }

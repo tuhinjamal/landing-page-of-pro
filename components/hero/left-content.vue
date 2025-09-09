@@ -3,13 +3,13 @@
     <!-- heading -->
     <p
       :class="[
-        'font-work text-[28px] leading-[120%] md:text-[40px] lg:text-[44px] 2xl:text-[58px] text-center md:text-start transition-all duration-500 ease-out font-extrabold',
+        ' text-[28px] leading-[120%] md:text-[40px] lg:text-[37px] 2xl:text-[48px] text-center md:text-start transition-all duration-500 ease-out font-extrabold',
         show.heading
           ? 'opacity-100 translate-y-0 blur-0'
           : 'opacity-0 translate-y-10 blur-sm',
       ]"
     >
-      ProHR: The,
+      People<span class="text-[#F47920]">Op</span>, The,
       <span class="text-[#F47920]">
         Best Roster, Attendance & Payroll System
       </span>
@@ -29,7 +29,7 @@
         <img src="./shield_icon.svg" alt="" class="2xl:h-[50px] 2xl:w-[50px]" />
 
         <p
-          class="text-[#0D121D] text-[16px] lg:text-[17px] 2xl:text-[25px] leading-[160%] font-[600] 2xl:font-[550] 2xl:leading-[120%]"
+          class="text-[#0D121D] text-[16px] lg:text-[17px] 2xl:text-[24px] leading-[160%] font-[600] 2xl:font-[550] 2xl:leading-[120%]"
         >
           Automate and Simplify your branch-wise Staff Management with Roster,
           Attendance, Payroll.

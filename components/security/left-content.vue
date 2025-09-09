@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <p
-      class="text-[28px] md:text-[36px] lg:text-[38px] font-bold leading-[120%]"
+      class="text-[28px] md:text-[36px] lg:text-[40px] font-bold leading-[120%]"
     >
       Committed to
       <span class="text-[#F47920]"> Secure Data </span>

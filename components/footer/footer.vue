@@ -26,7 +26,7 @@
           <div class="flex items-center gap-2 mb-3 cursor-pointer">
             <!-- <img src="./logo.png" alt="ProHR Logo" class="w-12 h-12" /> -->
             <img
-              src="./footer-logo.png"
+              src="./nav-logo.png"
               alt="ProHR Logo"
               class="w-[150px] h-[50px]"
             />

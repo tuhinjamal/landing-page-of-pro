@@ -189,42 +189,64 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import TestimonialCard from "./TestimonialCard.vue";
+const images = import.meta.glob("./images/*.png", {
+  eager: true,
+  import: "default",
+});
 
 const testimonials = [
   {
     quote:
-      "Managing teachers and staff attendance used to be a mess. ProHR solved it all in one place! This is really impressive",
+      "PeopleOp made it so easy to manage our team across departments. We save hours every week on attendance and payroll.",
 
-    name: "Abdul Hai",
-    avatar: "https://i.pravatar.cc/100?img=1",
-    role: "Director , BNM",
+    name: "Nazmul Sheikh",
+    avatar: images["./images/shajgoj.png"],
+    role: "Director , Shajgoj ",
     rating: 4.5,
   },
   {
     quote:
-      "ProHR made it so easy to manage our team across departments. It save hours every week on attendance and payroll. ",
+      "We love how smooth and user-friendly PeopleOp is. Our HR work is now faster and fully organized.",
 
-    name: "Nazmul Sheikh,",
-    avatar: "https://i.pravatar.cc/100?img=2",
-    role: "Director, Shajgoj",
+    name: "Sinthia Islam",
+    avatar: images["./images/Skin_Cafe.png"],
+    role: "Co-Founder, The Skin Cafe",
     rating: 5,
   },
   {
     quote:
-      "We love how smooth and user-friendly ProHR is. Our HR work is now faster and fully organized. ",
+      "Managing teachers and staff attendance used to be a mess. PeopleOp solved it all in one place! ",
 
-    name: "Sinthia Islam,",
-    avatar: "https://i.pravatar.cc/100?img=3",
-    role: "Co-Founder , The Skin Cafe",
+    name: "Abdul Hai",
+    avatar: images["./images/nursing.png"],
+    role: "Director , Bangladesh Nursing & Midwifery",
     rating: 4,
   },
   {
     quote:
-      "Managing teachers and staff attendance used to be a mess. ProHR solved it all in one place! This is really impressive",
+      "With PeopleOp, we now have full control over shifts, leaves, and employee records. Great system and great support.",
 
-    name: "Abdul Hai",
-    avatar: "https://i.pravatar.cc/100?img=4",
-    role: "CEO, Google",
+    name: "Gayathri Ganesh",
+    avatar: images["./images/grypas.png"],
+    role: "Human Resource Manager, Grypas ",
+    rating: 4.8,
+  },
+  {
+    quote:
+      "PeopleOp helped us reduce manual errors in salary and timesheets. It’s simple, smart, and works perfectly for us. ",
+
+    name: "Nazmul Hasan",
+    avatar: images["./images/Apacon.png"],
+    role: "CEO , Apacon  ",
+    rating: 4.8,
+  },
+  {
+    quote:
+      "We use PeopleOp across all our sites, and it works like magic. It saves us time and keeps everything on track.",
+
+    name: "Mohammad Mamun Serajul Islam",
+    avatar: images["./images/Just_West.png"],
+    role: "Just West , Managing Director  ",
     rating: 4.8,
   },
 ];
