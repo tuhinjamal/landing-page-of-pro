@@ -4,9 +4,9 @@
     <div
       v-for="(feature, index) in features"
       :key="index"
-      class="px-[23px] pt-[22px] transition cursor-pointer"
+      class="px-[23px] transition cursor-pointer"
     >
-      <div class="flex justify-start gap-[24px] items-center mb-[24px]">
+      <div class="flex justify-start gap-[24px] items-start">
         <img
           :src="feature.icon"
           alt="icon"
@@ -20,7 +20,7 @@
             {{ feature.title }}
           </h3>
           <p
-            class="text-[13px] md:text-[14px] font-[400] text-[#202A44] mx-auto md:mx-0 text-left leading-[160%]"
+            class="text-[13px] md:text-[14px] font-[400] text-[#202A44] mx-auto md:mx-0 text-left leading-[100%] mb-[24px]"
           >
             {{ feature.description }}
           </p>

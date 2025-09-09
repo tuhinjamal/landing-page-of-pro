@@ -3,7 +3,7 @@
     <!-- heading -->
     <p
       :class="[
-        ' text-[28px] leading-[120%] md:text-[40px] lg:text-[37px] 2xl:text-[48px] text-center md:text-start transition-all duration-500 ease-out font-extrabold',
+        ' text-[28px] leading-[120%] md:text-[40px] lg:text-[37px] 2xl:text-[40px] text-center md:text-start transition-all duration-500 ease-out font-extrabold',
         show.heading
           ? 'opacity-100 translate-y-0 blur-0'
           : 'opacity-0 translate-y-10 blur-sm',
@@ -29,7 +29,7 @@
         <img src="./shield_icon.svg" alt="" class="2xl:h-[50px] 2xl:w-[50px]" />
 
         <p
-          class="text-[#0D121D] text-[16px] lg:text-[17px] 2xl:text-[24px] leading-[160%] font-[600] 2xl:font-[550] 2xl:leading-[120%]"
+          class="text-[#0D121D] text-[14px] lg:text-[18px] 2xl:text-[18px] leading-[160%] font-[600] 2xl:font-[550] 2xl:leading-[120%]"
         >
           Automate and Simplify your branch-wise Staff Management with Roster,
           Attendance, Payroll.
@@ -39,7 +39,7 @@
       <!-- paragraph -->
       <p
         :class="[
-          'text-[#0D121D] text-[14px] lg:text-[14.5px] 2xl:text-[18px] font-[400] mt-[16px] leading-[160%] transition-all duration-500 ease-out text-center md:text-start',
+          'text-[#0D121D] text-[14px] lg:text-[14px] 2xl:text-[14px] font-[400] mt-[14px] leading-[160%] transition-all duration-500 ease-out text-center md:text-start',
           show.paragraph
             ? 'opacity-100 translate-y-0 blur-0'
             : 'opacity-0 translate-y-10 blur-sm',

@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <h1
-      class="text-[28px] md:text-[36px] lg:text-[40px] font-extrabold leading-[120%] mt-0 lg:mt-[32px]"
+      class="text-[28px] md:text-[36px] lg:text-[40px] font-extrabold leading-[120%]"
     >
       Flexible in <br />
       <span class="text-[#F47920]"> Rostering & Attendance </span>

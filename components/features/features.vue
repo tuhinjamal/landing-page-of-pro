@@ -1,7 +1,7 @@
 <template>
   <section id="features">
     <div
-      class="bg-[#ffffff] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[240px]"
+      class="bg-[#ffffff] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[360px]"
     >
       <p
         class="text-[22px] font-vina md:text-[36px] lg:text-[40px] font-[700] text-center mt-[120px] mb-[48px] leading-[120%]"
@@ -19,7 +19,7 @@
           class="bg-white border border-[#E9EAEC] px-[23px] py-[47px] rounded-3xl hover:shadow-md hover:border-[#F47920] transition cursor-pointer"
         >
           <div
-            class="bg-[#FEF2E9] rounded-xl p-[8px] w-[56px] h-[56px] mb-[24px]"
+            class="bg-[#FEF2E9] rounded-xl p-[16px] w-[56px] h-[56px] mb-[24px]"
           >
             <img :src="feature.icon" alt="icon" class="mx-auto md:mx-0" />
           </div>

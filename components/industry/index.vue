@@ -1,7 +1,7 @@
 <template>
   <section id="industry">
     <div
-      class="bg-[#ffffff] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[240px]"
+      class="bg-[#ffffff] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[360px]"
     >
       <p
         class="text-[22px] font-vina md:text-[40px] 2xl:text-[40px] font-[700] text-center mt-[120px] leading-[120%]"
@@ -19,15 +19,13 @@
           :key="index"
           class="bg-[#FEF2E9] border border-gray-100 px-[23px] py-[23px] rounded-2xl hover:shadow-md transition cursor-pointer hover:border-[#F47920]"
         >
-          <div class="grid grid-cols-[auto_1fr] gap-x-[20px] items-start">
+          <div class="grid grid-cols-1 gap-x-[20px] items-start">
             <!-- <img
               :src="feature.icon"
               alt="icon"
               class="w-[24px] h-[24px] mb-[10px] mx-auto md:mx-0"
             /> -->
-            <div
-              class="bg-[#FEF2E9] rounded p-[8px] w-[56px] h-[56px] mb-[24px]"
-            >
+            <div class="bg-white rounded p-[16px] w-[56px] h-[56px] mb-[24px]">
               <img :src="feature.icon" alt="icon" class="mx-auto md:mx-0" />
             </div>
             <div>

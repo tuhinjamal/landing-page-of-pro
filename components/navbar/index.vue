@@ -4,7 +4,7 @@
     class="w-full text-black py-[20px] md:py-[24px] bg-[#FEF2E9]/75 backdrop-blur-md"
   >
     <div
-      class="flex items-center justify-between mx-[20px] md:mx-[32px] lg:mx-[120px] 2xl:mx-[240px]"
+      class="flex items-center justify-between mx-[20px] md:mx-[32px] lg:mx-[120px] 2xl:mx-[360px]"
     >
       <!-- Logo -->
       <div

@@ -8,7 +8,7 @@
 
     <!-- Carousel -->
     <div
-      class="ml-0 md:ml-0 lg:ml-[120px] xl:ml-[120px] 2xl:ml-[240px] relative pb-[40px] px-[20px] md:px-[32px] lg:px-0 ]"
+      class="ml-0 md:ml-0 lg:ml-[120px] xl:ml-[120px] 2xl:ml-[360px] relative pb-[40px] px-[20px] md:px-[32px] lg:px-0"
     >
       <div ref="carouselWrapper" class="overflow-hidden relative">
         <div
@@ -17,9 +17,9 @@
           :style="{ transform: `translateX(-${offset}px)` }"
         >
           <TestimonialCard
-            v-for="(t, i) in carouselItems"
-            :key="i"
-            :testimonial="t"
+            v-for="(data, index) in carouselItems"
+            :key="index"
+            :testimonial="data"
             class="shrink-0"
             :style="{ width: `${cardWidth}px` }"
           />
@@ -29,14 +29,12 @@
 
     <!-- Controls -->
     <div
-      class="hidden md:grid grid-cols-2 md:grid-cols-3 items-center gap-4 px-[20px] xl:px-[120px] 2xl:px-[240px]"
+      class="hidden md:grid grid-cols-2 md:grid-cols-3 items-center gap-4 px-[20px] xl:px-[120px] 2xl:px-[360px]"
     >
       <div class="text-[24px] text-gray-500 italic">
-        <span class="text-black font-bold"
-          >{{
-            displayIndex + 1 < 10 ? `0${displayIndex + 1}` : displayIndex + 1
-          }}
-        </span>
+        <span class="text-black font-bold">{{
+          displayIndex + 1 < 10 ? `0${displayIndex + 1}` : displayIndex + 1
+        }}</span>
         /
         <span>{{
           originalCount < 10 ? `0${originalCount}` : originalCount
@@ -60,8 +58,6 @@
       <div
         class="hidden md:flex items-center justify-end gap-2 pr-0 2xl:pr-[32px]"
       >
-        <!-- Prev -->
-
         <button
           @click="scrollPrev"
           :class="[
@@ -84,7 +80,6 @@
           />
         </button>
 
-        <!-- Next -->
         <button
           @click="scrollNext"
           :class="[
@@ -98,7 +93,6 @@
             v-if="lastDirection !== 'next'"
             src="./arrow_black.svg"
             alt="arrow"
-            class=""
           />
           <img
             v-if="lastDirection === 'next'"
@@ -124,6 +118,7 @@
         />
       </div>
     </div>
+
     <!-- Mobile Buttons -->
     <div
       class="flex md:hidden justify-between items-center px-4 gap-2 pt-[32px]"
@@ -189,63 +184,61 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import TestimonialCard from "./TestimonialCard.vue";
-const images = import.meta.glob("./images/*.png", {
-  eager: true,
-  import: "default",
-});
+
+// Explicitly import images to guarantee correct mapping
+import shajgojImg from "./images/shajgoj.png";
+import skinCafeImg from "./images/Skin_Cafe.png";
+import nursingImg from "./images/nursing.png";
+import grypasImg from "./images/grypas.png";
+import apaconImg from "./images/Apacon.png";
+import justWestImg from "./images/Just_West.png";
 
 const testimonials = [
   {
     quote:
       "PeopleOp made it so easy to manage our team across departments. We save hours every week on attendance and payroll.",
-
     name: "Nazmul Sheikh",
-    avatar: images["./images/shajgoj.png"],
+    avatar: shajgojImg,
     role: "Director , Shajgoj ",
     rating: 4.5,
   },
   {
     quote:
       "We love how smooth and user-friendly PeopleOp is. Our HR work is now faster and fully organized.",
-
     name: "Sinthia Islam",
-    avatar: images["./images/Skin_Cafe.png"],
+    avatar: skinCafeImg,
     role: "Co-Founder, The Skin Cafe",
     rating: 5,
   },
   {
     quote:
       "Managing teachers and staff attendance used to be a mess. PeopleOp solved it all in one place! ",
-
     name: "Abdul Hai",
-    avatar: images["./images/nursing.png"],
+    avatar: nursingImg,
     role: "Director , Bangladesh Nursing & Midwifery",
     rating: 4,
   },
   {
     quote:
       "With PeopleOp, we now have full control over shifts, leaves, and employee records. Great system and great support.",
-
     name: "Gayathri Ganesh",
-    avatar: images["./images/grypas.png"],
+    avatar: grypasImg,
     role: "Human Resource Manager, Grypas ",
     rating: 4.8,
   },
   {
     quote:
       "PeopleOp helped us reduce manual errors in salary and timesheets. It’s simple, smart, and works perfectly for us. ",
-
     name: "Nazmul Hasan",
-    avatar: images["./images/Apacon.png"],
+    avatar: apaconImg,
     role: "CEO , Apacon  ",
     rating: 4.8,
   },
   {
     quote:
       "We use PeopleOp across all our sites, and it works like magic. It saves us time and keeps everything on track.",
-
     name: "Mohammad Mamun Serajul Islam",
-    avatar: images["./images/Just_West.png"],
+    avatar: justWestImg,
     role: "Just West , Managing Director  ",
     rating: 4.8,
   },
@@ -257,7 +250,7 @@ const carouselWrapper = ref(null);
 const cardGap = 24;
 const currentIndex = ref(originalCount); // Start from first original (after clones)
 const interval = ref(null);
-const lastDirection = ref("next"); // ✅ track active button
+const lastDirection = ref("next");
 const windowWidth = ref(
   typeof window !== "undefined" ? window.innerWidth : 1024
 );
@@ -269,7 +262,7 @@ const updateWindowWidth = () => {
 };
 
 const cardsPerView = computed(() => {
-  if (windowWidth.value >= 1440) return 3.25;
+  if (windowWidth.value >= 1080) return 3.25;
   if (windowWidth.value < 640) return 1;
   if (windowWidth.value < 1024) return 2;
   return 2.5;
@@ -277,12 +270,19 @@ const cardsPerView = computed(() => {
 
 const visibleCount = computed(() => Math.ceil(cardsPerView.value));
 
+// Fill carousel items every render to ensure consistency
 const carouselItems = computed(() => {
-  return [
-    ...testimonials.slice(-visibleCount.value),
-    ...testimonials,
-    ...testimonials.slice(0, visibleCount.value),
-  ];
+  const items = [];
+  const count = visibleCount.value;
+
+  // prepend last few for infinite scroll
+  items.push(...testimonials.slice(-count));
+  // main items
+  items.push(...testimonials);
+  // append first few for infinite scroll
+  items.push(...testimonials.slice(0, count));
+
+  return items;
 });
 
 const cardWidth = computed(() => {
@@ -299,7 +299,7 @@ const offset = computed(() => {
 });
 
 const scrollNext = () => {
-  lastDirection.value = "next"; // ✅
+  lastDirection.value = "next";
   currentIndex.value++;
   if (currentIndex.value >= originalCount + visibleCount.value) {
     setTimeout(() => {
@@ -313,7 +313,7 @@ const scrollNext = () => {
 };
 
 const scrollPrev = () => {
-  lastDirection.value = "prev"; // ✅
+  lastDirection.value = "prev";
   currentIndex.value--;
   if (currentIndex.value < visibleCount.value) {
     setTimeout(() => {
