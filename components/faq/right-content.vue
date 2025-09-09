@@ -3,7 +3,7 @@
     <img
       src="./faq-image.png"
       alt="hero image"
-      class="w-full h-full object-cover"
+      class="w-full h-[530px] object-cover rounded-lg"
     />
   </div>
 </template>
