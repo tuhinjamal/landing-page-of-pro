@@ -54,9 +54,7 @@
               v-model="form.name"
               required
             />
-
-            <div class="flex gap-4">
-              <TwemojiParse>
+            <!--  <TwemojiParse>
                 <select
                   v-model="form.countryCode"
                   class="border border-[#6A7082] rounded-l-md p-2 bg-gray-100"
@@ -66,10 +64,45 @@
                     :key="country.dial_code"
                     :value="country.dial_code"
                   >
+                  
                     {{ country.emoji }} {{ country.dial_code }}
                   </option>
                 </select>
-              </TwemojiParse>
+              </TwemojiParse> -->
+            <div class="flex gap-2">
+              <div class="relative w-40">
+                <div
+                  class="border-l border-b border-t border-r border-[#6A7082] rounded-l-md p-2 flex items-center justify-center gap-0.5 cursor-pointer"
+                  @click="open = !open"
+                >
+                  <span class="flex items-center"
+                    ><img
+                      :src="`https://flagcdn.com/${selectedFlag.toLowerCase()}`"
+                      class="w-5 h-4 mr-2"
+                    />
+                    {{ selected.dial_code }}</span
+                  >
+                  <span>▼</span>
+                </div>
+
+                <div
+                  v-if="open"
+                  class="absolute top-full left-0 right-0 border bg-white max-h-60 overflow-y-auto z-50"
+                >
+                  <div
+                    v-for="country in countryCodes"
+                    :key="country.dial_code"
+                    class="flex items-center p-2 hover:bg-gray-100 cursor-pointer"
+                    @click="selectCountry(country)"
+                  >
+                    <img
+                      :src="`https://flagcdn.com/${country.image.toLowerCase()}`"
+                      class="w-5 h-4 mr-2"
+                    />
+                    {{ country.dial_code }}
+                  </div>
+                </div>
+              </div>
 
               <input
                 type="tel"
@@ -150,7 +183,7 @@
 
 <script setup>
 import axios from "axios";
-import { reactive, ref, defineProps, defineEmits } from "vue";
+import { reactive, ref, defineProps, defineEmits, onMounted } from "vue";
 import countryCodes from "./countryCodes.json"; // adjust path if needed
 // props
 const props = defineProps({
@@ -172,6 +205,15 @@ const form = reactive({
   company: "",
   employees: "",
 });
+const open = ref(false);
+const selected = ref({ dial_code: "+880" });
+const selectedFlag = ref("bd.svg");
+const selectCountry = (country) => {
+  selected.value = country;
+  form.countryCode = country.dial_code;
+  open.value = false;
+  selectedFlag.value = country.image;
+};
 
 const loading = ref(false);
 const successMessage = ref("");
