@@ -14,7 +14,7 @@
         <div
           ref="track"
           class="flex gap-6 transition-transform duration-700 ease-in-out"
-          :style="{ transform: `translateX(-${offset}px)` }"
+          :style="{ transform: `translate3d(-${offset}px, 0, 0)` }"
         >
           <TestimonialCard
             v-for="data in carouselItems"
@@ -60,20 +60,21 @@
       >
         <button
           @click="scrollPrev"
-          :class="[
-            'w-[62px] h-[62px] rounded-full flex items-center justify-center group transition-colors duration-300',
-            lastDirection === 'prev'
-              ? 'bg-black text-white'
-              : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
-          ]"
+          class="w-[62px] h-[62px] rounded-full flex items-center justify-center group transition-colors duration-300 bg-[#E9EAEC] hover:bg-black"
         >
+          <!-- Black arrow (default) -->
           <img
-            v-if="lastDirection !== 'prev'"
             src="./arrow_black.svg"
             alt="arrow"
-            class="rotate-180"
+            class="rotate-180 block group-hover:hidden"
           />
-          <img v-else src="./arrow_white.svg" alt="arrow" />
+
+          <!-- White arrow (on hover) -->
+          <img
+            src="./arrow_white.svg"
+            alt="arrow"
+            class="hidden group-hover:block"
+          />
         </button>
 
         <button
@@ -85,12 +86,27 @@
               : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
           ]"
         >
+          <!-- Black arrow (default) -->
           <img
             v-if="lastDirection !== 'next'"
             src="./arrow_black.svg"
             alt="arrow"
+            class="block group-hover:hidden"
           />
-          <img v-else src="./arrow_white.svg" alt="arrow" class="rotate-180" />
+
+          <!-- White arrow (on hover OR when active) -->
+          <img
+            v-if="lastDirection === 'next'"
+            src="./arrow_white.svg"
+            alt="arrow"
+            class="rotate-180 block"
+          />
+          <img
+            v-else
+            src="./arrow_white.svg"
+            alt="arrow"
+            class="rotate-180 hidden group-hover:block"
+          />
         </button>
       </div>
     </div>
@@ -115,13 +131,17 @@
       class="flex md:hidden justify-between items-center px-4 gap-2 pt-[32px]"
     >
       <div class="text-[24px] text-gray-500 italic">
-        <span class="text-black font-bold">{{
-          displayIndex + 1 < 10 ? `0${displayIndex + 1}` : displayIndex + 1
-        }}</span>
+        <span class="text-black font-bold">
+          {{
+            displayIndex + 1 < 10 ? `0${displayIndex + 1}` : displayIndex + 1
+          }}
+        </span>
         /
         <span>{{ originalCount }}</span>
       </div>
+
       <div class="flex justify-between items-center gap-4">
+        <!-- Prev button -->
         <button
           @click="scrollPrev"
           :class="[
@@ -131,20 +151,30 @@
               : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
           ]"
         >
+          <!-- Black arrow (default) -->
           <img
             v-if="lastDirection !== 'prev'"
             src="./arrow_black.svg"
             alt="arrow"
-            class="rotate-180 w-[12px] h-[12px]"
+            class="rotate-180 w-[12px] h-[12px] block group-hover:hidden"
+          />
+
+          <!-- White arrow (hover or active) -->
+          <img
+            v-if="lastDirection === 'prev'"
+            src="./arrow_white.svg"
+            alt="arrow"
+            class="w-[12px] h-[12px] block"
           />
           <img
             v-else
             src="./arrow_white.svg"
             alt="arrow"
-            class="w-[12px] h-[12px]"
+            class="rotate-180 w-[12px] h-[12px] hidden group-hover:block"
           />
         </button>
 
+        <!-- Next button -->
         <button
           @click="scrollNext"
           :class="[
@@ -154,17 +184,26 @@
               : 'bg-[#E9EAEC] hover:bg-black hover:text-white',
           ]"
         >
+          <!-- Black arrow (default) -->
           <img
             v-if="lastDirection !== 'next'"
             src="./arrow_black.svg"
             alt="arrow"
-            class="w-[12px] h-[12px]"
+            class="w-[12px] h-[12px] block group-hover:hidden"
+          />
+
+          <!-- White arrow (hover or active) -->
+          <img
+            v-if="lastDirection === 'next'"
+            src="./arrow_white.svg"
+            alt="arrow"
+            class="rotate-180 w-[12px] h-[12px] block"
           />
           <img
             v-else
             src="./arrow_white.svg"
             alt="arrow"
-            class="rotate-180 w-[12px] h-[12px]"
+            class="rotate-180 w-[12px] h-[12px] hidden group-hover:block"
           />
         </button>
       </div>
@@ -187,42 +226,48 @@ import justWestImg from "./images/Just_West.png";
 // Data
 const testimonials = [
   {
-    quote: "PeopleOp made it so easy to manage our team...",
+    quote:
+      "PeopleOp made it so easy to manage our team across departments. We save hours every week on attendance and payroll.",
     name: "Nazmul Sheikh",
     avatar: shajgojImg,
     role: "Director, Shajgoj",
     rating: 4.5,
   },
   {
-    quote: "We love how smooth and user-friendly PeopleOp is...",
+    quote:
+      "We love how smooth and user-friendly PeopleOp is. Our HR work is now faster and fully organized.",
     name: "Sinthia Islam",
     avatar: skinCafeImg,
     role: "Co-Founder, The Skin Cafe",
     rating: 5,
   },
   {
-    quote: "Managing teachers and staff attendance used to be a mess...",
+    quote:
+      "Managing teachers and staff attendance used to be a mess. PeopleOp solved it all in one place!",
     name: "Abdul Hai",
     avatar: nursingImg,
     role: "Director, Nursing & Midwifery",
     rating: 4,
   },
   {
-    quote: "With PeopleOp, we now have full control over shifts...",
+    quote:
+      "With PeopleOp, we now have full control over shifts, leaves, and employee records. Great system and great support.",
     name: "Gayathri Ganesh",
     avatar: grypasImg,
     role: "HR Manager, Grypas",
     rating: 4.8,
   },
   {
-    quote: "PeopleOp helped us reduce manual errors in salary...",
+    quote:
+      "PeopleOp helped us reduce manual errors in salary and timesheets. It’s simple, smart, and works perfectly for us.",
     name: "Nazmul Hasan",
     avatar: apaconImg,
     role: "CEO, Apacon",
     rating: 4.8,
   },
   {
-    quote: "We use PeopleOp across all our sites, and it works like magic...",
+    quote:
+      "We use PeopleOp across all our sites, and it works like magic. It saves us time and keeps everything on",
     name: "Mohammad Mamun Serajul Islam",
     avatar: justWestImg,
     role: "Managing Director, Just West",
@@ -241,19 +286,20 @@ const windowWidth = ref(
 );
 
 const updateWindowWidth = () => {
-  if (typeof window !== "undefined") {
-    windowWidth.value = window.innerWidth;
-  }
+  if (typeof window !== "undefined") windowWidth.value = window.innerWidth;
 };
 
+// ✅ Fractional cardsPerView
 const cardsPerView = computed(() => {
-  if (windowWidth.value >= 1280) return 3;
+  if (windowWidth.value >= 1200) return 3.25;
+  if (windowWidth.value >= 1080) return 3.25;
   if (windowWidth.value >= 1024) return 2.5;
   if (windowWidth.value >= 768) return 2;
   return 1;
 });
 
-const visibleCount = computed(() => Math.ceil(cardsPerView.value));
+// ✅ Clone count should be nearest full number
+const visibleCount = computed(() => Math.round(cardsPerView.value));
 
 const carouselItems = computed(() => {
   const count = visibleCount.value;
@@ -272,13 +318,18 @@ const carouselItems = computed(() => {
   return [...prepend, ...main, ...append];
 });
 
+const cardGap = 24;
+
 const cardWidth = computed(() => {
   const wrapper = carouselWrapper.value;
   if (!wrapper) return 0;
-  return wrapper.clientWidth / cardsPerView.value;
+  const totalGap = cardGap * (Math.ceil(cardsPerView.value) - 1);
+  return (wrapper.clientWidth - totalGap) / cardsPerView.value;
 });
 
-const offset = computed(() => currentIndex.value * cardWidth.value);
+const offset = computed(() => {
+  return currentIndex.value * (cardWidth.value + cardGap);
+});
 
 const scrollNext = () => {
   lastDirection.value = "next";
@@ -287,7 +338,7 @@ const scrollNext = () => {
     setTimeout(() => {
       currentIndex.value = visibleCount.value;
       track.value.style.transition = "none";
-      track.value.style.transform = `translateX(-${offset.value}px)`;
+      track.value.style.transform = `translate3d(-${offset.value}px,0,0)`;
       void track.value.offsetWidth;
       track.value.style.transition = "";
     }, 700);
@@ -301,7 +352,7 @@ const scrollPrev = () => {
     setTimeout(() => {
       currentIndex.value = originalCount + visibleCount.value - 1;
       track.value.style.transition = "none";
-      track.value.style.transform = `translateX(-${offset.value}px)`;
+      track.value.style.transform = `translate3d(-${offset.value}px,0,0)`;
       void track.value.offsetWidth;
       track.value.style.transition = "";
     }, 700);

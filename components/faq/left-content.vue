@@ -65,11 +65,7 @@ const faqs = [
     answer:
       "Yes, ProHR is flexible. We can tailor modules like shifts, timesheets, and payroll according to your company policies",
   },
-  {
-    question: "Does PROHR offer customisable reports and dashboards?",
-    answer:
-      "Yes, PROHR provides a range of customizable reports and dashboards to help you gain insights from your HR data.",
-  },
+
   {
     question: "Is there a mobile app for employees and managers?",
     answer:

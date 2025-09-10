@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2025-07-15",
   devtools: { enabled: false },
-  modules: ["@nuxt/eslint", "@nuxt/fonts"],
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "nuxt-twemoji"],
   fonts: {
     google: {
       families: [
@@ -26,5 +26,8 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
+  },
+  twemoji: {
+    expiresIn: 3.154e7, // SVG cache expiration time in seconds (1 year)
   },
 });

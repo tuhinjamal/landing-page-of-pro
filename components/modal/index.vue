@@ -50,32 +50,27 @@
             <input
               type="text"
               class="w-full border border-[#6A7082] rounded-md p-2"
-              placeholder="Enter your name"
+              placeholder="Enter name"
               v-model="form.name"
               required
             />
 
             <div class="flex gap-4">
-              <!-- <select
-                v-model="form.countryCode"
-                class="border border-[#6A7082] rounded-l-md p-2 bg-gray-100"
-              >
-                <option value="+880">🇧🇩 +880</option>
-                <option value="+91">🇮🇳 +91</option>
-                <option value="+1">🇺🇸 +1</option>
-              </select> -->
-              <select
-                v-model="form.countryCode"
-                class="border border-[#6A7082] rounded-l-md p-2 bg-gray-100"
-              >
-                <option
-                  v-for="country in countryCodes"
-                  :key="country.dial_code"
-                  :value="country.dial_code"
+              <TwemojiParse>
+                <select
+                  v-model="form.countryCode"
+                  class="border border-[#6A7082] rounded-l-md p-2 bg-gray-100"
                 >
-                  {{ country.emoji }} {{ country.dial_code }}
-                </option>
-              </select>
+                  <option
+                    v-for="country in countryCodes"
+                    :key="country.dial_code"
+                    :value="country.dial_code"
+                  >
+                    {{ country.emoji }} {{ country.dial_code }}
+                  </option>
+                </select>
+              </TwemojiParse>
+
               <input
                 type="tel"
                 class="w-full border border-[#6A7082] rounded-r-md p-2"
@@ -88,7 +83,7 @@
             <input
               type="email"
               class="w-full border rounded-md p-2"
-              placeholder="Enter your Email address"
+              placeholder="Enter Email Address"
               v-model="form.email"
               required
             />
@@ -97,7 +92,7 @@
               <input
                 type="text"
                 class="w-full border border-[#6A7082] rounded-md p-2"
-                placeholder="Enter your Company Name"
+                placeholder="Enter Company Name"
                 v-model="form.company"
               />
 

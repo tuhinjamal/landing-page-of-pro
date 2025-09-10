@@ -73,8 +73,8 @@ const features = [
       "Handle multi-site attendance, project-based shifts, and contractor workforce with ease. Get real-time updates from on-site teams with mobile-based tracking.",
   },
   {
-    title: "Coorporate & Tech Companies",
-    icon: images["./coorporate.svg"],
+    title: "Corporate  & Tech Companies",
+    icon: images["./corporate .svg"],
     description:
       "Automate HR processes, manage hybrid teams, and simplify payroll with full transparency. Built for fast-paced companies that value efficiency and security. ",
   },

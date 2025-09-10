@@ -9,7 +9,7 @@
           : 'opacity-0 translate-y-10 blur-sm',
       ]"
     >
-      People<span class="text-[#F47920]">Op</span>, The,
+      People<span class="text-[#F47920]">Op</span>, The
       <span class="text-[#F47920]">
         Best Roster, Attendance & Payroll System
       </span>
