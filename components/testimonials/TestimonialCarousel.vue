@@ -17,11 +17,11 @@
           :style="{ transform: `translateX(-${offset}px)` }"
         >
           <TestimonialCard
-            v-for="(data, index) in carouselItems"
-            :key="index"
+            v-for="data in carouselItems"
+            :key="data._id"
             :testimonial="data"
-            class="shrink-0"
-            :style="{ width: `${cardWidth}px` }"
+            class="flex-shrink-0"
+            :style="{ width: cardWidth + 'px' }"
           />
         </div>
       </div>
@@ -73,11 +73,7 @@
             alt="arrow"
             class="rotate-180"
           />
-          <img
-            v-if="lastDirection === 'prev'"
-            src="./arrow_white.svg"
-            alt="arrow"
-          />
+          <img v-else src="./arrow_white.svg" alt="arrow" />
         </button>
 
         <button
@@ -94,12 +90,7 @@
             src="./arrow_black.svg"
             alt="arrow"
           />
-          <img
-            v-if="lastDirection === 'next'"
-            src="./arrow_white.svg"
-            alt="arrow"
-            class="rotate-180"
-          />
+          <img v-else src="./arrow_white.svg" alt="arrow" class="rotate-180" />
         </button>
       </div>
     </div>
@@ -147,7 +138,7 @@
             class="rotate-180 w-[12px] h-[12px]"
           />
           <img
-            v-if="lastDirection === 'prev'"
+            v-else
             src="./arrow_white.svg"
             alt="arrow"
             class="w-[12px] h-[12px]"
@@ -170,7 +161,7 @@
             class="w-[12px] h-[12px]"
           />
           <img
-            v-if="lastDirection === 'next'"
+            v-else
             src="./arrow_white.svg"
             alt="arrow"
             class="rotate-180 w-[12px] h-[12px]"
@@ -182,10 +173,10 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount, watch } from "vue";
 import TestimonialCard from "./TestimonialCard.vue";
 
-// Explicitly import images to guarantee correct mapping
+// Explicit image imports
 import shajgojImg from "./images/shajgoj.png";
 import skinCafeImg from "./images/Skin_Cafe.png";
 import nursingImg from "./images/nursing.png";
@@ -193,53 +184,48 @@ import grypasImg from "./images/grypas.png";
 import apaconImg from "./images/Apacon.png";
 import justWestImg from "./images/Just_West.png";
 
+// Data
 const testimonials = [
   {
-    quote:
-      "PeopleOp made it so easy to manage our team across departments. We save hours every week on attendance and payroll.",
+    quote: "PeopleOp made it so easy to manage our team...",
     name: "Nazmul Sheikh",
     avatar: shajgojImg,
-    role: "Director , Shajgoj ",
+    role: "Director, Shajgoj",
     rating: 4.5,
   },
   {
-    quote:
-      "We love how smooth and user-friendly PeopleOp is. Our HR work is now faster and fully organized.",
+    quote: "We love how smooth and user-friendly PeopleOp is...",
     name: "Sinthia Islam",
     avatar: skinCafeImg,
     role: "Co-Founder, The Skin Cafe",
     rating: 5,
   },
   {
-    quote:
-      "Managing teachers and staff attendance used to be a mess. PeopleOp solved it all in one place! ",
+    quote: "Managing teachers and staff attendance used to be a mess...",
     name: "Abdul Hai",
     avatar: nursingImg,
-    role: "Director , Bangladesh Nursing & Midwifery",
+    role: "Director, Nursing & Midwifery",
     rating: 4,
   },
   {
-    quote:
-      "With PeopleOp, we now have full control over shifts, leaves, and employee records. Great system and great support.",
+    quote: "With PeopleOp, we now have full control over shifts...",
     name: "Gayathri Ganesh",
     avatar: grypasImg,
-    role: "Human Resource Manager, Grypas ",
+    role: "HR Manager, Grypas",
     rating: 4.8,
   },
   {
-    quote:
-      "PeopleOp helped us reduce manual errors in salary and timesheets. It’s simple, smart, and works perfectly for us. ",
+    quote: "PeopleOp helped us reduce manual errors in salary...",
     name: "Nazmul Hasan",
     avatar: apaconImg,
-    role: "CEO , Apacon  ",
+    role: "CEO, Apacon",
     rating: 4.8,
   },
   {
-    quote:
-      "We use PeopleOp across all our sites, and it works like magic. It saves us time and keeps everything on track.",
+    quote: "We use PeopleOp across all our sites, and it works like magic...",
     name: "Mohammad Mamun Serajul Islam",
     avatar: justWestImg,
-    role: "Just West , Managing Director  ",
+    role: "Managing Director, Just West",
     rating: 4.8,
   },
 ];
@@ -247,8 +233,7 @@ const testimonials = [
 const originalCount = testimonials.length;
 const track = ref(null);
 const carouselWrapper = ref(null);
-const cardGap = 24;
-const currentIndex = ref(originalCount); // Start from first original (after clones)
+const currentIndex = ref(0);
 const interval = ref(null);
 const lastDirection = ref("next");
 const windowWidth = ref(
@@ -262,41 +247,38 @@ const updateWindowWidth = () => {
 };
 
 const cardsPerView = computed(() => {
-  if (windowWidth.value >= 1080) return 3.25;
-  if (windowWidth.value < 640) return 1;
-  if (windowWidth.value < 1024) return 2;
-  return 2.5;
+  if (windowWidth.value >= 1280) return 3;
+  if (windowWidth.value >= 1024) return 2.5;
+  if (windowWidth.value >= 768) return 2;
+  return 1;
 });
 
 const visibleCount = computed(() => Math.ceil(cardsPerView.value));
 
-// Fill carousel items every render to ensure consistency
 const carouselItems = computed(() => {
-  const items = [];
   const count = visibleCount.value;
-
-  // prepend last few for infinite scroll
-  items.push(...testimonials.slice(-count));
-  // main items
-  items.push(...testimonials);
-  // append first few for infinite scroll
-  items.push(...testimonials.slice(0, count));
-
-  return items;
+  const prepend = testimonials.slice(-count).map((item, i) => ({
+    ...item,
+    _id: `prepend-${i}-${item.name}`,
+  }));
+  const main = testimonials.map((item, i) => ({
+    ...item,
+    _id: `main-${i}-${item.name}`,
+  }));
+  const append = testimonials.slice(0, count).map((item, i) => ({
+    ...item,
+    _id: `append-${i}-${item.name}`,
+  }));
+  return [...prepend, ...main, ...append];
 });
 
 const cardWidth = computed(() => {
   const wrapper = carouselWrapper.value;
   if (!wrapper) return 0;
-  return (
-    (wrapper.clientWidth - cardGap * (cardsPerView.value - 1)) /
-    cardsPerView.value
-  );
+  return wrapper.clientWidth / cardsPerView.value;
 });
 
-const offset = computed(() => {
-  return currentIndex.value * (cardWidth.value + cardGap);
-});
+const offset = computed(() => currentIndex.value * cardWidth.value);
 
 const scrollNext = () => {
   lastDirection.value = "next";
@@ -329,23 +311,25 @@ const scrollPrev = () => {
 const startAutoScroll = () => {
   interval.value = setInterval(scrollNext, 4000);
 };
+const stopAutoScroll = () => clearInterval(interval.value);
 
-const stopAutoScroll = () => {
-  clearInterval(interval.value);
-};
-
-const displayIndex = computed(() => {
-  return (currentIndex.value - visibleCount.value) % originalCount;
-});
+const displayIndex = computed(
+  () =>
+    (currentIndex.value - visibleCount.value + originalCount) % originalCount
+);
 
 onMounted(() => {
   updateWindowWidth();
+  currentIndex.value = visibleCount.value;
   window.addEventListener("resize", updateWindowWidth);
   startAutoScroll();
 });
-
 onBeforeUnmount(() => {
   stopAutoScroll();
   window.removeEventListener("resize", updateWindowWidth);
+});
+
+watch(windowWidth, () => {
+  currentIndex.value = visibleCount.value;
 });
 </script>
