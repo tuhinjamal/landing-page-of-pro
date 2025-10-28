@@ -5,12 +5,13 @@
       v-for="(feature, index) in features"
       :key="index"
       class="px-[23px] transition cursor-pointer"
+      :class="index !== 0 ? 'py-[25px]' : 'pb-[25px]'"
     >
       <div class="flex justify-start gap-[24px] items-start">
         <img
           :src="feature.icon"
           alt="icon"
-          class="w-[24px] h-[24px] mb-[10px] mx-auto md:mx-0"
+          class="w-[67px] h-[67px] mb-[10px] mx-auto md:mx-0"
         />
         <div>
           <!-- </div> -->
@@ -24,6 +25,7 @@
           >
             {{ feature.description }}
           </p>
+          <hr class="text-[#E9EAEC]" />
         </div>
       </div>
     </div>

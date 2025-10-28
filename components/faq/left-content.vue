@@ -1,9 +1,9 @@
 <template>
-  <section class="bg-white mx-0 my-0 px-0 py-0">
+  <section class="bg-[#F9F9F9] mx-0 my-0 px-0 py-0">
     <div
       v-for="(item, index) in faqs"
       :key="index"
-      class="border-t-2 border-b-2 border-gray-200 overflow-hidden mx-0 my-0 px-0 py-0"
+      class="border-t border-gray-200 overflow-hidden mx-0 my-0 px-0 py-0"
     >
       <!-- Question -->
       <button
@@ -14,10 +14,10 @@
         <span
           :class="
             activeIndex === index
-              ? 'text-[#F6917E] bg-[#F6917E]/30 backdrop-blur-md transition-colors duration-300 ease-in-out h-[12px] w-[12px] md:h-[24px] md:w-[24px] rounded-full flex items-center justify-center'
+              ? ' bg-white backdrop-blur-md transition-colors duration-300 ease-in-out h-[12px] w-[12px] md:h-[24px] md:w-[24px] rounded-full flex items-center justify-center'
               : 'text-black h-[12px] w-[12px] md:h-[24px] md:w-[24px]'
           "
-          class="text-xl font-bold cursor-pointer"
+          class="text-xl font-[600] cursor-pointer"
         >
           {{ activeIndex === index ? "×" : "+" }}
         </span>

@@ -1,7 +1,7 @@
 <template>
   <!-- <nav class="w-full text-black py-[20px] md:py-[24px] bg-[#FEF2E9]"> -->
   <nav
-    class="w-full text-black py-[20px] md:py-[24px] bg-[#FEF2E9]/75 backdrop-blur-md"
+    class="w-full text-black py-[20px] md:py-[24px] bg-[#ffe6e4] backdrop-blur-md"
   >
     <div
       class="flex items-center justify-between mx-[20px] md:mx-[32px] lg:mx-[120px] 2xl:mx-[360px]"
@@ -11,13 +11,13 @@
         class="text-2xl font-bold tracking-wider flex items-center space-x-1 cursor-pointer"
       >
         <!-- <img src="./logo.svg" alt="ProHR Logo" class="h-8" /> -->
-        <img src="./nav-logo.png" alt="" />
+        <img src="./nav-logo.png" alt="" class="w-auto h-[25px]" />
       </div>
 
       <!-- Hamburger Icon -->
       <button
         @click="isOpen = !isOpen"
-        class="lg:hidden focus:outline-none border-1 border-[#F47920] text-[#F47920]"
+        class="lg:hidden focus:outline-none border-1 border-[#F47920] text-[#F25323]"
       >
         <svg
           v-if="!isOpen"
@@ -58,9 +58,9 @@
             href="#"
             @click.prevent="scrollTo('home')"
             :class="{
-              'text-[#F47920] font-[600]': activeSection === 'home',
+              'text-[#F25323] font-[600]': activeSection === 'home',
             }"
-            class="transition-colors hover:text-[#F47920]"
+            class="transition-colors hover:text-[#F25323]"
             >Overview</a
           >
         </li>
@@ -69,9 +69,9 @@
             href="#"
             @click.prevent="scrollTo('features')"
             :class="{
-              'text-[#F47920] font-[600]': activeSection === 'features',
+              'text-[#F25323] font-[600]': activeSection === 'features',
             }"
-            class="transition-colors hover:text-[#F47920]"
+            class="transition-colors hover:text-[#F25323]"
             >Features</a
           >
         </li>
@@ -80,9 +80,9 @@
             href="#"
             @click.prevent="scrollTo('industry')"
             :class="{
-              'text-[#F47920] font-[600]': activeSection === 'industry',
+              'text-[#F25323] font-[600]': activeSection === 'industry',
             }"
-            class="transition-colors hover:text-[#F47920]"
+            class="transition-colors hover:text-[#F25323]"
             >Industry we Serve</a
           >
         </li>
@@ -91,10 +91,21 @@
             href="#"
             @click.prevent="scrollTo('options')"
             :class="{
-              'text-[#F47920] font-[600]': activeSection === 'options',
+              'text-[#F25323] font-[600]': activeSection === 'options',
             }"
-            class="transition-colors hover:text-[#F47920]"
-            >Why Choose ProHR </a
+            class="transition-colors hover:text-[#F25323]"
+            >Why Choose</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            @click.prevent="scrollTo('options')"
+            :class="{
+              'text-[#F25323] font-[600]': activeSection === 'options',
+            }"
+            class="transition-colors hover:text-[#F25323]"
+            >about</a
           >
         </li>
       </ul>
@@ -102,17 +113,11 @@
       <!-- CTA Buttons -->
       <div class="hidden lg:flex gap-[16px]">
         <button
-          class="px-[24px] py-[11px] bg-transparent border text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white"
-          disabled
-        >
-          <p>+880 1708 006168</p>
-        </button>
-        <button
           @click="isOpenModal = true"
-          class="px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
+          class="w-full px-[24px] py-[11px] bg-[#685CF2] text-[14px] font-semibold rounded-lg hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
         >
-          <p>Get a free demo</p>
-          <img src="../../assets/images/arrow-45-deg.png" alt="" />
+          <p class="mx-0 my-0 px-0 py-0">Get a free demo</p>
+          <img src="../../assets/images/right-angle.png" alt="" />
         </button>
       </div>
     </div>
@@ -128,7 +133,7 @@
             href="#"
             @click.prevent="scrollTo('home')"
             :class="{
-              'text-[#F47920] font-[600]': activeSection === 'home',
+              'text-[#F25323] font-[600]': activeSection === 'home',
             }"
             >Home</a
           >
@@ -138,7 +143,7 @@
             href="#"
             @click.prevent="scrollTo('features')"
             :class="{
-              'text-[#F47920] font-[600]': activeSection === 'features',
+              'text-[#F25323] font-[600]': activeSection === 'features',
             }"
             >Features</a
           >
@@ -148,7 +153,7 @@
             href="#"
             @click.prevent="scrollTo('industry')"
             :class="{
-              'text-[#F47920] font-[600]': activeSection === 'industry',
+              'text-[#F25323] font-[600]': activeSection === 'industry',
             }"
             >Products & Services</a
           >
@@ -158,7 +163,7 @@
             href="#"
             @click.prevent="scrollTo('options')"
             :class="{
-              'text-[#F47920] font-[600]': activeSection === 'options',
+              'text-[#F25323] font-[600]': activeSection === 'options',
             }"
             >About us</a
           >
@@ -166,19 +171,11 @@
 
         <li>
           <button
-            class="w-full px-[24px] py-[11px] bg-transparent border text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white"
-            disabled
-          >
-            <p>+880 1708 006168</p>
-          </button>
-        </li>
-        <li>
-          <button
             @click="isOpenModal = true"
-            class="w-full px-[24px] py-[11px] bg-[#F47920] text-[14px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
+            class="w-full px-[24px] py-[11px] bg-[#685CF2] text-[14px] font-semibold rounded-lg hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
           >
             <p>Get a free demo</p>
-            <img src="../../assets/images/arrow-45-deg.png" alt="" />
+            <img src="../../assets/images/right-angle.png" alt="" />
           </button>
         </li>
       </ul>

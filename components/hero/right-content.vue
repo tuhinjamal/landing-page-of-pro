@@ -1,5 +1,19 @@
 <template>
-  <div class="flex flex-col justify-center items-center lg:items-end w-full">
+  <!-- <div class="flex flex-col justify-center items-center lg:items-end w-full">
+    <img
+      src="./hero-image.png"
+      alt="hero image"
+      :class="[
+        'w-full h-full object-cover transition-all duration-500 ease-out',
+        show.image
+          ? 'opacity-100 translate-y-0 blur-0'
+          : 'opacity-0 translate-y-10 blur-sm',
+      ]"
+    />
+  </div> -->
+  <div
+    class="flex flex-col justify-center items-center lg:items-end w-full rounded-tl-2xl rounded-tr-2xl rounded-br-2xl overflow-hidden border-white border-[12px]"
+  >
     <img
       src="./hero-image.png"
       alt="hero image"

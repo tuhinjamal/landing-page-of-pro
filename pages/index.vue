@@ -1,17 +1,17 @@
 <template>
   <div>
     <Navbar class="sticky top-0 z-50" />
-    <div class="bg-[#FEF2E9] z-10">
+    <div class="bg-[#ffe6e4] z-10">
       <Hero />
     </div>
     <Features />
     <Automate />
-    <div class="bg-[#FEF2E9] m-0 p-0">
+    <div class="bg-[#FFE6E4] m-0 p-0">
       <Roster />
     </div>
     <Options />
 
-    <div class="bg-[#FEF2E9] m-0 p-0">
+    <div class="bg-[#FFE6E4] m-0 p-0">
       <Security />
     </div>
     <Industry />

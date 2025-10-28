@@ -1,17 +1,20 @@
 <template>
   <div>
-    <div class="block bg-[#F47920] px-[20px]">
+    <div class="block combined-bg px-[20px]">
       <div class="py-[100px] flex flex-col items-center">
-        <p class="text-center text-[28px] lg:text-[40px] font-[700] text-white">
-          Ready to Automate your HR Management?
+        <p
+          class="text-center text-[28px] lg:text-[40px] font-[700] text-[#FFB5AF]"
+        >
+          Ready to Automate your <br />
+          HR Management?
         </p>
 
         <button
-          class="px-[24px] py-[12px] bg-white text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center w-full md:w-auto leading-[160%]"
+          class="px-[24px] py-[12px] bg-[#F25323] text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#FFFFFF] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center w-full md:w-auto leading-[160%]"
           @click="isOpenModal = true"
         >
           <p>Get a free demo</p>
-          <img src="../../assets/images/arrow-45-deg.png" alt="" />
+          <img src="../../assets/images/right-angle.png" alt="" />
         </button>
       </div>
     </div>
@@ -26,9 +29,9 @@
           <div class="flex items-center gap-2 mb-3 cursor-pointer">
             <!-- <img src="./logo.png" alt="ProHR Logo" class="w-12 h-12" /> -->
             <img
-              src="./nav-logo.png"
+              src="./footer-logo.png"
               alt="ProHR Logo"
-              class="w-[150px] h-[50px]"
+              class="w-[150px] h-[30px]"
             />
           </div>
           <p class="text-[14px] font-[400] leading-[180%] lg:pr-[100px]">
@@ -45,7 +48,7 @@
           <div class="">
             <ul class="cursor-pointer">
               <li>
-                <h4 class="font-[600] text-[14px] text-[#F47920] mb-3">Menu</h4>
+                <h4 class="font-[600] text-[14px] text-[#F25323] mb-3">Menu</h4>
               </li>
               <li
                 class="text-[14px] font-[400]"
@@ -70,7 +73,7 @@
           <div class="">
             <ul class="cursor-pointer">
               <li>
-                <h4 class="font-[600] text-[14px text-[#F47920] mb-3">
+                <h4 class="font-[600] text-[14px text-[#F25323] mb-3">
                   About Us
                 </h4>
               </li>
@@ -89,7 +92,7 @@
           <div class="">
             <ul class="space-y-2 cursor-pointer">
               <li class="flex items-center gap-2">
-                <h4 class="font-[600] text-[14px text-[#F47920]">
+                <h4 class="font-[600] text-[14px text-[#F25323]">
                   Social Media
                 </h4>
               </li>
@@ -139,3 +142,20 @@ function scrollTo(id) {
   }
 }
 </script>
+
+<style scoped>
+/* .combined-bg {
+  background-image: url("./back_image_for_sub_footer.png");
+  background-color: #094781f0;
+} */
+.combined-bg {
+  background-image: linear-gradient(
+      rgba(9, 71, 129, 0.9),
+      rgba(9, 71, 129, 0.9)
+    ),
+    url("../../assets/images/back_image_for_sub_footer.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>

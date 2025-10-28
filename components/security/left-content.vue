@@ -4,7 +4,7 @@
       class="text-[28px] md:text-[36px] lg:text-[40px] font-bold leading-[120%]"
     >
       Committed to
-      <span class="text-[#F47920]"> Secure Data </span>
+      <span class="text-[#F25323]"> Secure Data </span>
       Management
     </p>
 
@@ -22,14 +22,14 @@
       </div>
     </div>
     <section class="mt-[40px]">
-      <div v-for="(item, index) in faqs" :key="index" class="">
+      <div v-for="(item, index) in faqs" :key="index" class="mb-[16px]">
         <!-- Question -->
         <button
           @click="toggle(index)"
-          class="w-full flex justify-between items-start md:items-center text-left py-4 font-[600] text-[12px] md:text-[16px] not-italic gap-4"
+          class="w-full flex justify-between items-start md:items-center text-left py-4 font-[600] text-[12px] md:text-[16px] not-italic gap-4 bg-white px-4"
         >
-          <span class="cursor-pointer leading-[160%] justify-center flex gap-4"
-            ><img src="./right-arrow.png" alt="" /> {{ item.question }}</span
+          <span class="cursor-pointer leading-[160%] justify-center flex gap-4">
+            {{ item.question }}</span
           >
           <span
             :class="
@@ -49,10 +49,10 @@
         </button>
 
         <!-- Answer -->
-        <transition name="accordion">
+        <transition name="accordion" class="bg-white">
           <div
             v-if="activeIndex === index"
-            class="leading-[120%] px-4 pb-4 text-[14px] font-[400] text-[#4D5569] leading-relaxed"
+            class="leading-[120%] px-4 pb-4 text-[14px] font-[400] text-[#4D5569] leading-relaxed bg-white"
           >
             {{ item.answer }}
           </div>

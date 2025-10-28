@@ -1,9 +1,10 @@
 <template>
   <div class="">
     <button
-      class="text-[12px] md:text-[16px] font-[600] bg-[#309771] px-[24px] py-[12px] text-white rounded-lg"
+      class="text-[12px] md:text-[16px] font-[700] px-[24px] py-[12px] text-[#685CF2] rounded-xl flex gap-2 items-center border border-[#E6E6E6]"
     >
-      AI-Powered Face Detected Attendance App.
+      <img src="./ai-icon.png" alt="" /> AI-Powered Face Detected Attendance
+      App.
     </button>
     <p
       class="text-[28px] md:text-[36px] lg:text-[38px] font-bold leading-[120%] mt-[16px]"
@@ -18,20 +19,19 @@
         class="grid grid-cols-[auto_1fr] gap-4 justify-center items-center w-full mt-[16px]"
       >
         <p class="text-[#0D121D] text-[14px] font-[400] leading-[160%]">
-          Manage employee attendance with or without a roster. ProHR allows you
-          to create rosters even when availability is not set, ensuring smooth
-          workforce management in every situation. Employees also have the
-          flexibility to start work on their own without a pre-set roster, with
-          attendance automatically tracked.
+          Track real-time attendance, reduce manual errors, and eliminate buddy
+          punching. Enable location-based check-ins, smart analytics, and
+          instant reports all from your phone. Boost efficiency, transparency,
+          and workforce accountability with our AI-powered attendance app. 
         </p>
       </div>
     </div>
     <button
-      class="px-[24px] py-[12px] bg-[#F47920] text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#0D121D] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%]"
+      class="px-[24px] py-[12px] bg-[#685CF2] text-[16px] font-semibold rounded-lg hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%]"
       @click="isOpenModal = true"
     >
       <p>Get a free demo</p>
-      <img src="../../assets/images/arrow-45-deg.png" alt="" />
+      <img src="../../assets/images/right-angle.png" alt="" />
     </button>
     <Modal :isOpen="isOpenModal" @close="isOpenModal = false" />
   </div>

@@ -1,8 +1,8 @@
 <template>
-  <section id="testimonials" class="py-[60px] lg:py-[120px] bg-[#FEF2E9]">
+  <section id="testimonials" class="py-[60px] lg:py-[120px] bg-[#FFFFFF]">
     <div class="text-center pb-[40px] md:pb-[48px]">
       <p class="text-[25px] md:text-[40px] font-[700] text-[#000000] font-vina">
-        <span class="text-[#F47920]">Testimonial </span> from clients
+        <span class="text-[#F25323]">Testimonial </span> from clients
       </p>
     </div>
 

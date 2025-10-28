@@ -1,13 +1,9 @@
 <template>
-  <div class="relative bg-[#FFFFFF] rounded-2xl shadow-sm w-[400px] h-[334px]">
+  <div class="relative bg-[#F9F9F9] rounded-2xl shadow-sm w-[400px] h-[334px]">
     <div
       class="mt-[32px] ml-[31px] bg-gray-100 h-[56px] w-[56px] rounded-full flex justify-center items-center text-center"
     >
-      <img
-        src="../../assets/images/double-quote.png"
-        alt=""
-        class="px-[16px] py-[16px]"
-      />
+      <img src="./double-quote.png" alt="" class="" />
     </div>
 
     <!-- Quote Text -->
@@ -28,7 +24,7 @@
       />
       <div>
         <!-- Star Rating -->
-        <div class="flex gap-[4px] items-center text-[#F47920] pb-[8px]">
+        <div class="flex gap-[4px] items-center text-[#F25323] pb-[8px]">
           <template v-for="i in 5" :key="i">
             <!-- full star -->
             <svg

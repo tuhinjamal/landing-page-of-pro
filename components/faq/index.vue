@@ -6,13 +6,13 @@
     <p
       class="leading-[120%] text-center text-[28px] md:text-[40px] font-[700] mb-[48px] mt-[59px]"
     >
-      Frequently Asked <span class="text-[#F47920]"> Questions </span>
+      Frequently Asked <span class="text-[#F25323]"> Questions </span>
     </p>
     <div
-      class="grid grid-cols-1 gap-[80px] lg:grid-cols-2 justify-center items-start"
+      class="grid grid-cols-1 gap-[80px] justify-center items-start bg-[#F9F9F9] px-[20px] md:px-[30px] lg:px-[60px] xl:px-[80px] py-[20px] md:py-[30px] lg:py-[60px] xl:py-[80px]"
     >
       <leftContent class="order-2 lg:order-2" />
-      <rightContent class="order-1 lg:order-1" />
+      <!-- <rightContent class="order-1 lg:order-1" /> -->
     </div>
   </div>
 </template>

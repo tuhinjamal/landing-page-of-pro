@@ -6,7 +6,7 @@
     <p
       class="text-center text-[28px] md:text-[40px] font-[700] pb-[41px] leading-[120%]"
     >
-      Why <span class="text-[#F47920]"> Choose ProHR </span>
+      Why <span class="text-[#F25323]"> Choose ProHR </span>
     </p>
     <div
       class="grid grid-cols-1 gap-[80px] lg:grid-cols-2 justify-center items-start"
