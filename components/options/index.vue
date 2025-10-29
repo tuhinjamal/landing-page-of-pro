@@ -11,7 +11,7 @@
     <div
       class="grid grid-cols-1 gap-[80px] lg:grid-cols-2 justify-center items-start"
     >
-      <leftContent />
+      <leftContent class="sticky top-0" />
       <rightContent />
     </div>
   </div>

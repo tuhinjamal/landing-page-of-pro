@@ -10,11 +10,15 @@
         </p>
 
         <button
-          class="px-[24px] py-[12px] bg-[#F25323] text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#FFFFFF] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center w-full md:w-auto leading-[160%]"
+          class="px-[24px] py-[12px] bg-[#F25323] text-[16px] font-semibold rounded-lg hover:bg-[#DE6E1D] transition text-[#FFFFFF] hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-2 justify-center items-center w-full md:w-auto leading-[160%]"
           @click="isOpenModal = true"
         >
-          <p>Get a free demo</p>
-          <img src="../../assets/images/right-angle.png" alt="" />
+          <p class="">Get a free demo</p>
+          <img
+            src="../../assets/images/right-angle.png"
+            alt="arrow"
+            class="mt-1"
+          />
         </button>
       </div>
     </div>
@@ -143,19 +147,4 @@ function scrollTo(id) {
 }
 </script>
 
-<style scoped>
-/* .combined-bg {
-  background-image: url("./back_image_for_sub_footer.png");
-  background-color: #094781f0;
-} */
-.combined-bg {
-  background-image: linear-gradient(
-      rgba(9, 71, 129, 0.9),
-      rgba(9, 71, 129, 0.9)
-    ),
-    url("../../assets/images/back_image_for_sub_footer.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-</style>
+<style scoped></style>

@@ -1,22 +1,5 @@
 @import "tailwindcss";
 
-/* @font-face {
-  font-family: "Work Sans";
-  src: url("./work-sans/WorkSans-Regular.ttf") format("woff2"),
-    url("./work-sans/WorkSans-Regular.ttf") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Work Sans";
-  src: url("./work-sans/WorkSans-Bold.ttf") format("woff2"),
-    url("./work-sans/WorkSans-Bold.ttf") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-} */
 /* font face inter */
 @font-face {
   font-family: "Inter";
@@ -44,4 +27,15 @@ body {
 
 .font-work {
   font-family: "Work Sans";
+}
+
+.combined-bg {
+  background-image: linear-gradient(
+      rgba(9, 71, 129, 0.94),
+      rgba(9, 71, 129, 0.94)
+    ),
+    url("../../assets/images/back_image_for_sub_footer.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

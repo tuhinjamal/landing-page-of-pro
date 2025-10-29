@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "PeopeOp",
+      title: "people 11",
       link: [
         {
           rel: "icon",

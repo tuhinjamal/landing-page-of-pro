@@ -63,7 +63,7 @@
       <!-- button -->
       <button
         :class="[
-          'px-[24px] py-[12px] bg-[#685CF2] text-[16px] font-[600] rounded-lg hover:bg-[#685CF2] text-white hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%] transition-all duration-500 ease-out w-full md:w-auto',
+          'px-[24px] py-[12px] bg-[#685CF2] text-[16px] font-[600]  hover:bg-[#685CF2] text-white hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-2 justify-center items-center leading-[160%] transition-all duration-500 ease-out w-full md:w-auto',
           show.button
             ? 'opacity-100 translate-y-0 blur-0'
             : 'opacity-0 translate-y-10 blur-sm',
@@ -71,9 +71,9 @@
         @click="isOpenModal = true"
       >
         <p class="mx-0 my-0 px-0 py-0">Get a free demo</p>
-        <img src="../../assets/images/right-angle.png" alt="" />
+        <img src="../../assets/images/right-angle.png" alt="" class="mt-1" />
       </button>
-      <small class="text-[#0D121D] font-[500]"
+      <small class="text-[#0D121D] font-[500] text-[10px]"
         >**No credit card required**</small
       >
     </div>

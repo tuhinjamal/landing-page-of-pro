@@ -3,7 +3,7 @@
     <div
       class="bg-[#ffffff] mx-[20px] md:mx-[32px] lg:mx-[120px] xl:mx-[120px] 2xl:mx-[360px]"
     >
-      <p class="text-center text-[16px] mt-[120px]">Special Features</p>
+      <p class="text-center text-[16px]">Special Features</p>
       <p
         class="text-[22px] font-vina md:text-[36px] lg:text-[40px] font-[700] text-center mb-[48px] leading-[120%] mt-[16px]"
       >
@@ -17,7 +17,7 @@
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="bg-white border border-[#E9EAEC] px-[23px] py-[47px] rounded-3xl hover:shadow-md hover:border-[#F25323] transition cursor-pointer"
+          class="bg-white border border-[#E9EAEC] px-[23px] py-[47px] rounded-3xl hover:shadow-md hover:border-[#F25323] transition cursor-pointer ml-4"
         >
           <div class="rounded-full w-[64px] h-[64px] mb-[24px]">
             <img :src="feature.icon" alt="icon" class="mx-auto md:mx-0" />

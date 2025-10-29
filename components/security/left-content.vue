@@ -39,19 +39,19 @@
             "
             class="text-xl font-bold cursor-pointer"
           >
-            <template v-if="activeIndex === index">
+            <!-- <template v-if="activeIndex === index">
               <img src="./arrow.png" alt="up arrow" class="rotate-180" />
-            </template>
-            <template v-else>
+              v
+            </template> <template v-else>
               <img src="./arrow.png" alt="up arrow" />
-            </template>
+              >
+            </template> -->
           </span>
         </button>
 
         <!-- Answer -->
         <transition name="accordion" class="bg-white">
           <div
-            v-if="activeIndex === index"
             class="leading-[120%] px-4 pb-4 text-[14px] font-[400] text-[#4D5569] leading-relaxed bg-white"
           >
             {{ item.answer }}

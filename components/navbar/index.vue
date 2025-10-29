@@ -114,9 +114,9 @@
       <div class="hidden lg:flex gap-[16px]">
         <button
           @click="isOpenModal = true"
-          class="w-full px-[24px] py-[11px] bg-[#685CF2] text-[14px] font-semibold rounded-lg hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
+          class="w-full px-[24px] py-[11px] bg-[#685CF2] text-[14px] font-semibold hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-2 justify-center items-center leading-[160%]"
         >
-          <p class="mx-0 my-0 px-0 py-0">Get a free demo</p>
+          <p>Get a free demo</p>
           <img src="../../assets/images/right-angle.png" alt="" />
         </button>
       </div>
@@ -172,7 +172,7 @@
         <li>
           <button
             @click="isOpenModal = true"
-            class="w-full px-[24px] py-[11px] bg-[#685CF2] text-[14px] font-semibold rounded-lg hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
+            class="w-full px-[24px] py-[11px] bg-[#685CF2] text-[14px] font-semibold hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer grid grid-cols-[1fr_auto] gap-[4px] justify-center items-center leading-[160%]"
           >
             <p>Get a free demo</p>
             <img src="../../assets/images/right-angle.png" alt="" />

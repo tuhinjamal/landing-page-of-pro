@@ -27,11 +27,11 @@
       </div>
     </div>
     <button
-      class="px-[24px] py-[12px] bg-[#685CF2] text-[16px] font-semibold rounded-lg hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-4 justify-center items-center leading-[160%]"
+      class="px-[24px] py-[12px] bg-[#685CF2] text-[16px] font-semibold hover:bg-[#685CF2] transition text-white hover:text-white cursor-pointer mt-[40px] grid grid-cols-[1fr_auto] gap-2 justify-center items-center leading-[160%]"
       @click="isOpenModal = true"
     >
       <p>Get a free demo</p>
-      <img src="../../assets/images/right-angle.png" alt="" />
+      <img src="../../assets/images/right-angle.png" alt="" class="mt-1" />
     </button>
     <Modal :isOpen="isOpenModal" @close="isOpenModal = false" />
   </div>

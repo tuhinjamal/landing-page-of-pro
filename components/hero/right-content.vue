@@ -12,7 +12,7 @@
     />
   </div> -->
   <div
-    class="flex flex-col justify-center items-center lg:items-end w-full rounded-tl-2xl rounded-tr-2xl rounded-br-2xl overflow-hidden border-white border-[12px]"
+    class="flex flex-col justify-center items-center lg:items-end w-full rounded-tl-4xl rounded-tr-4xl rounded-br-4xl overflow-hidden border-white border-[12px]"
   >
     <img
       src="./hero-image.png"

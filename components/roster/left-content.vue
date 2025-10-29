@@ -70,7 +70,9 @@
           >
             Reduced Admin Workload
           </p>
-          <p class="text-[#0D121D] text-[14px] font-[400] mx-0 my-0 px-0 py-0">
+          <p
+            class="text-[#0D121D] text-[14px] leading-[250%] font-[400] mx-0 my-0 px-0 py-0"
+          >
             Ensure accurate records and smooth management for staff & managers.
           </p>
         </div>

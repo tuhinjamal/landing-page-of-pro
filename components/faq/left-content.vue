@@ -1,5 +1,10 @@
 <template>
   <section class="bg-[#F9F9F9] mx-0 my-0 px-0 py-0">
+    <p
+      class="leading-[120%] text-center text-[28px] md:text-[40px] font-[700] mb-[40px]"
+    >
+      Frequently Asked <span class="text-[#F25323]"> Questions </span>
+    </p>
     <div
       v-for="(item, index) in faqs"
       :key="index"
@@ -15,7 +20,7 @@
           :class="
             activeIndex === index
               ? ' bg-white backdrop-blur-md transition-colors duration-300 ease-in-out h-[12px] w-[12px] md:h-[24px] md:w-[24px] rounded-full flex items-center justify-center'
-              : 'text-black h-[12px] w-[12px] md:h-[24px] md:w-[24px]'
+              : 'text-black h-[12px] w-[12px] md:h-[24px] md:w-[24px] rounded-full flex items-center justify-center'
           "
           class="text-xl font-[600] cursor-pointer"
         >
